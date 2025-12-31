@@ -3,7 +3,12 @@ import { NextRequest } from 'next/server';
 export const runtime = 'nodejs';
 
 const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || '';
+// Permitimos variantes comunes de la variable para despliegues (Vercel/Docker)
+const GEMINI_API_KEY =
+    process.env.GEMINI_API_KEY ||
+    (process.env as any).Gemini_Api_key || // compatibilidad solicitada
+    process.env.GOOGLE_API_KEY ||
+    '';
 
 export async function POST(req: NextRequest) {
     if (!GEMINI_API_KEY) {
