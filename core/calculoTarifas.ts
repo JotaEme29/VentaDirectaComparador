@@ -88,7 +88,14 @@ function estimateCommission(annualSavings: number) {
     return cappedBySavings; // sin tope absoluto
 }
 
-function selectBlock<T extends { desde?: number | null; hasta?: number | null }>(blocks: T[], value: number) {
+type RangoComision = {
+    desde?: number | null;
+    hasta?: number | null;
+    comision?: number | null;
+    bloques_consumo?: RangoComision[];
+};
+
+function selectBlock<T extends RangoComision>(blocks: T[], value: number) {
     return blocks.find(b => {
         const min = b.desde ?? 0;
         const max = b.hasta ?? null;
