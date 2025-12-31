@@ -1,4 +1,4 @@
-// File: C:\Users\PC\Desktop\Cmp\Comparador Direct Leads\app\layout.tsx
+// File: /Users/migueldelgado/Desktop/VentaDirectaComparador/app/layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

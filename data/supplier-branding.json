@@ -1,0 +1,122 @@
+{
+    "IBERDROLA": {
+        "name": "Iberdrola",
+        "logo": "logos/iberdrola.png",
+        "primaryColor": "#00A335",
+        "secondaryColor": "#004C97",
+        "website": "www.iberdrola.es",
+        "phone": "900 225 235"
+    },
+    "ENDESA": {
+        "name": "Endesa",
+        "logo": "logos/endesa.png",
+        "primaryColor": "#0066CC",
+        "secondaryColor": "#003D7A",
+        "website": "www.endesa.com",
+        "phone": "800 760 909"
+    },
+    "NATURGY": {
+        "name": "Naturgy",
+        "logo": "logos/naturgy.png",
+        "primaryColor": "#FF9933",
+        "secondaryColor": "#CC7A29",
+        "website": "www.naturgy.es",
+        "phone": "900 100 251"
+    },
+    "REPSOL": {
+        "name": "Repsol",
+        "logo": "logos/repsol.png",
+        "primaryColor": "#FF6600",
+        "secondaryColor": "#CC5200",
+        "website": "www.repsol.es",
+        "phone": "900 100 100"
+    },
+    "EDP": {
+        "name": "EDP España",
+        "logo": "logos/edp.png",
+        "primaryColor": "#E2001A",
+        "secondaryColor": "#A80014",
+        "website": "www.edpenergia.es",
+        "phone": "800 100 020"
+    },
+    "TOTALENERGIES": {
+        "name": "TotalEnergies",
+        "logo": "logos/totalenergies.png",
+        "primaryColor": "#EE3124",
+        "secondaryColor": "#BD271D",
+        "website": "totalenergies.es",
+        "phone": "900 907 132"
+    },
+    "PODO": {
+        "name": "Podo",
+        "logo": "logos/podo.png",
+        "primaryColor": "#00A651",
+        "secondaryColor": "#008542",
+        "website": "www.podo.es",
+        "phone": "900 907 906"
+    },
+    "IGNIS": {
+        "name": "Ignis",
+        "logo": "logos/ignis.png",
+        "primaryColor": "#00A651",
+        "secondaryColor": "#008542",
+        "website": "www.ignis.es",
+        "phone": "900 907 907"
+    },
+    "FACTOR ENERGIA": {
+        "name": "Factor Energía",
+        "logo": "logos/factor-energia.png",
+        "primaryColor": "#00A3E0",
+        "secondaryColor": "#0082B3",
+        "website": "www.factorenergia.com",
+        "phone": "900 850 000"
+    },
+    "LOCALUZ": {
+        "name": "Localuz",
+        "logo": "logos/localuz.png",
+        "primaryColor": "#FF0000",
+        "secondaryColor": "#CC0000",
+        "website": "",
+        "phone": ""
+    },
+    "OCTOPUS": {
+        "name": "Octopus Energy",
+        "logo": "logos/octopus.png",
+        "primaryColor": "#FF0099",
+        "secondaryColor": "#CC007A",
+        "website": "octopusenergy.es",
+        "phone": "900 649 104"
+    },
+    "PEPEENERGY": {
+        "name": "Pepeenergy",
+        "logo": "logos/pepeenergy.png",
+        "primaryColor": "#00B4D8",
+        "secondaryColor": "#0090AD",
+        "website": "www.pepeenergy.com",
+        "phone": "910 053 175"
+    },
+    "AUDAX": {
+        "name": "Audax",
+        "logo": "logos/audax.png",
+        "primaryColor": "#00A0E3",
+        "secondaryColor": "#0080B5",
+        "website": "www.audaxenergia.es",
+        "phone": "900 920 000"
+    },
+    "POLARIS": {
+        "name": "Polaris Energy",
+        "logo": "logos/polaris.png",
+        "primaryColor": "#FFD700",
+        "secondaryColor": "#FFA500",
+        "website": "www.polarisenergy.es",
+        "phone": "900 907 908"
+    },
+    "GREENING ENERGY": {
+        "name": "Greening Energy",
+        "logo": "logos/greening.png",
+        "primaryColor": "#00A651",
+        "secondaryColor": "#008542",
+        "website": "www.greening-e.com",
+        "phone": "900 907 909"
+    }
+}

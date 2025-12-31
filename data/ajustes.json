@@ -1,0 +1,17 @@
+{
+    "energiaPorKwh": {
+        "ACCIONA": {
+            "default": 0.02
+        },
+        "TOTAL ENERGIES": {
+            "prefixes": {
+                "SOUL": 0.02
+            }
+        },
+        "IGNIS": {
+            "prefixes": {
+                "TERRA AIR": 0.018
+            }
+        }
+    }
+}

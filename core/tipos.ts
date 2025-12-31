@@ -15,7 +15,6 @@ export interface FormData {
     tariffType: TariffType;
     region: Region;
     gasTariffBand: 'RL1' | 'RL2' | 'RL3' | 'RL4' | 'RL5';
-
     clientName: string;
     address: string;
     cups: string;
@@ -37,7 +36,7 @@ export interface FormData {
     gasFixedDaily: number;
     gasVariableKwh: number;
 
-    // Consumos por periodo (para zona comerciales, aunque en B2C uses total)
+    // Consumos por periodo
     consumptionP1: number;
     consumptionP2: number;
     consumptionP3: number;
@@ -52,19 +51,29 @@ export interface FormData {
     potenciaP4: number;
     potenciaP5: number;
     potenciaP6: number;
+
+    // Opcional: factura adjunta/base64 para IA o envío por email
+    invoiceFile?: {
+        fileName: string;
+        mimeType: string;
+        base64: string;
+    } | null;
 }
 
 export interface ResultadoTarifa {
     supplier: string;
     productName: string;
     tariffType: TariffType | string;
+    recommended?: boolean;
 
     // Costes principales
     energyCost: number;
     powerCost: number;
     equipmentRental: number;
     otherCosts: number;
-    electricityTax: number;
+    socialBonus?: number;
+    electricityTax?: number;
+    gasTax?: number;
     vat: number;
     subtotal: number;
     taxableBase: number;

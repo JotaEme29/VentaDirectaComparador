@@ -1,0 +1,117 @@
+{
+  "GAS": {
+    "NATURGY": {
+      "tarifaType": "GAS",
+      "metadata": {
+        "comercializadora": "NATURGY"
+      },
+      "productos": [
+        {
+          "band": "RL1",
+          "nombre": "Tarifa Por Uso RL1",
+          "terminoFijoDiario": 0.1536899667,
+          "terminoVariableKwh": 0.080822
+
+        },
+        {
+          "band": "RL2",
+          "nombre": "Tarifa Por Uso RL2",
+          "terminoFijoDiario": 0.2317957,
+          "terminoVariableKwh": 0.079782
+
+        },
+        {
+          "band": "RL3",
+          "nombre": "Tarifa Por Uso RL3",
+          "terminoFijoDiario": 0.4892707667,
+          "terminoVariableKwh": 0.075921
+        }
+        
+      ]
+    },
+    "ENDESA": {
+      "tarifaType": "GAS",
+      "metadata": {
+        "comercializadora": "ENDESA"
+      },
+      "productos": [
+        {
+          "band": "RL1",
+          "nombre": "GAS ENDESA RL1 COS",
+          "terminoFijoDiario": 0.23608767,
+          "terminoVariableKwh": 0.084700
+
+        },
+         {
+          "band": "RL2",
+          "nombre": "GAS ENDESA RL2 COS",
+          "terminoFijoDiario": 0.48,
+          "terminoVariableKwh": 0.080200
+
+        },
+        {
+          "band": "RL3",
+          "nombre": "GAS ENDESA RL3 COS",
+          "terminoFijoDiario": 1.01675,
+          "terminoVariableKwh": 0.074000
+
+
+        },
+        {
+          "band": "RL1",
+          "nombre": "GAS ENDESA RL1 PDS",
+          "terminoFijoDiario": 0.23608767,
+          "terminoVariableKwh": 0.084700
+
+        },
+         {
+          "band": "RL2",
+          "nombre": "GAS ENDESA RL2 PDS",
+          "terminoFijoDiario": 0.48,
+          "terminoVariableKwh": 0.080200
+
+        },
+        {
+          "band": "RL3",
+          "nombre": "GAS ENDESA RL3 PDS",
+          "terminoFijoDiario": 1.01675,
+          "terminoVariableKwh": 0.074000
+
+
+        }
+      ]
+    },
+    "REPSOL": {
+      "tarifaType": "GAS",
+      "metadata": {
+        "comercializadora": "REPSOL"
+      },
+      "productos": [
+        {
+          "band": "RL1",
+          "nombre": "RL1 GAS 12M V11 REPSOL",
+          "terminoFijoDiario": 0.0699,
+          "terminoVariableKwh": 0.0648
+        },
+        {
+          "band": "RL1",
+          "nombre": "RL1 GAS 12M V12 REPSOL",
+          "terminoFijoDiario": 0.0659,
+          "terminoVariableKwh": 0.0648
+        },
+        {
+          "band": "RL2",
+          "nombre": "RL2 GAS 12M MV REPSOL",
+          "terminoFijoDiario": 0.363333,
+          "terminoVariableKwh": 0.0899
+        },
+        {
+          "band": "RL3",
+          "nombre": "RL3 GAS 12M MV REPSOL",
+          "terminoFijoDiario": 0.363333,
+          "terminoVariableKwh": 0.0899
+        }
+      ]
+    }
+  }
+}

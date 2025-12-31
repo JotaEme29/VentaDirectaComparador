@@ -1,4 +1,4 @@
-// File: C:\Users\PC\Desktop\Cmp\Comparador Direct Leads\app\page.tsx
+// File: /Users/migueldelgado/Desktop/VentaDirectaComparador/app/page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

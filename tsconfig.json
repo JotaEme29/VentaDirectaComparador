@@ -18,6 +18,9 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
+      "@/*": [
+        "./*"
+      ],
       "@core/*": [
         "core/*"
       ],

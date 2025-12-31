@@ -15783,6 +15783,1871 @@
       }
     }
   },
+  "ACCIONA": {
+    "tipo": "variable",
+    "tarifas": {
+      "2.0TD": {
+        "LEVANTE+": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 48 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 98 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 180 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 290 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 390 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 550 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 750 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 950 },
+            { "desde": 50000.001, "hasta": null, "comision": 1300 }
+          ]
+        },
+        "PONIENTE+": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 24 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 54 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 100 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 170 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 230 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 320 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 440 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 560 },
+            { "desde": 50000.001, "hasta": null, "comision": 770 }
+          ]
+        },
+        "TRAMONTANA+": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 12 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 27 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 45 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 85 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 115 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 160 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 220 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 280 },
+            { "desde": 50000.001, "hasta": null, "comision": 385 }
+          ]
+        },
+        "CIERZO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 40 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 60 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 80 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 110 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 130 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 170 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 220 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 260 },
+            { "desde": 50000.001, "hasta": null, "comision": 320 }
+          ]
+        },
+        "LEVANTE": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 20 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 70 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 150 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 250 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 350 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 500 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 700 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 900 },
+            { "desde": 50000.001, "hasta": null, "comision": 1250 }
+          ]
+        },
+        "PONIENTE": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 12 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 42 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 90 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 150 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 210 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 300 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 420 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 540 },
+            { "desde": 50000.001, "hasta": null, "comision": 750 }
+          ]
+        },
+        "TRAMONTANA": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 6 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 21 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 45 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 75 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 105 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 150 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 210 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 270 },
+            { "desde": 50000.001, "hasta": null, "comision": 375 }
+          ]
+        }
+      },
+      "3.0TD": {
+        "LEVANTE+": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 218 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 308 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 430 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 540 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 680 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 860 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 1110 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 1380 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 1830 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 2490 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 3450 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 4710 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 6530 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 8880 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 11320 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 14870 },
+            { "desde": 700000.001, "hasta": 900000, "comision": 19570 },
+            { "desde": 900000.001, "hasta": 1100000, "comision": 24080 },
+            { "desde": 1100000.001, "hasta": 1500000, "comision": 31060 },
+            { "desde": 1500000.001, "hasta": 2000000, "comision": 40330 },
+            { "desde": 2000000.001, "hasta": null, "comision": 47900 }
+          ]
+        },
+        "PONIENTE+": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 104 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 164 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 230 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 290 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 370 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 480 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 620 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 780 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 1040 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 1420 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 1970 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 2700 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 3760 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 5140 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 6560 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 8630 },
+            { "desde": 700000.001, "hasta": 900000, "comision": 11380 },
+            { "desde": 900000.001, "hasta": 1100000, "comision": 14040 },
+            { "desde": 1100000.001, "hasta": 1500000, "comision": 18130 },
+            { "desde": 1500000.001, "hasta": 2000000, "comision": 23660 },
+            { "desde": 2000000.001, "hasta": null, "comision": 28150 }
+          ]
+        },
+        "TRAMONTANA+": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 52 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 77 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 115 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 145 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 185 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 240 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 310 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 390 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 515 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 705 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 980 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 1350 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 1880 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 2570 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 3280 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 4310 },
+            { "desde": 700000.001, "hasta": 900000, "comision": 5690 },
+            { "desde": 900000.001, "hasta": 1100000, "comision": 7020 },
+            { "desde": 1100000.001, "hasta": 1500000, "comision": 9060 },
+            { "desde": 1500000.001, "hasta": 2000000, "comision": 11830 },
+            { "desde": 2000000.001, "hasta": null, "comision": 14070 }
+          ]
+        },
+        "CIERZO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 300 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 380 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 450 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 490 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 560 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 640 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 750 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 900 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 1120 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 1460 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 1930 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 2520 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 3300 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 4220 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 5280 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 6700 },
+            { "desde": 700000.001, "hasta": 900000, "comision": 8550 },
+            { "desde": 900000.001, "hasta": 1100000, "comision": 10120 },
+            { "desde": 1100000.001, "hasta": 1500000, "comision": 12790 },
+            { "desde": 1500000.001, "hasta": 2000000, "comision": 15000 },
+            { "desde": 2000000.001, "hasta": null, "comision": 17250 }
+          ]
+        },
+        "LEVANTE": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 20 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 70 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 150 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 250 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 350 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 500 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 700 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 900 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 1250 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 1750 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 2500 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 3500 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 5000 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 7000 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 9000 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 12000 },
+            { "desde": 700000.001, "hasta": 900000, "comision": 16000 },
+            { "desde": 900000.001, "hasta": 1100000, "comision": 20000 },
+            { "desde": 1100000.001, "hasta": 1500000, "comision": 26000 },
+            { "desde": 1500000.001, "hasta": 2000000, "comision": 35000 },
+            { "desde": 2000000.001, "hasta": null, "comision": 42000 }
+          ]
+        },
+        "PONIENTE": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 12 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 42 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 90 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 150 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 210 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 300 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 420 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 540 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 750 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 1050 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 1500 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 2100 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 3000 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 4200 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 5400 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 7200 },
+            { "desde": 700000.001, "hasta": 900000, "comision": 9600 },
+            { "desde": 900000.001, "hasta": 1100000, "comision": 12000 },
+            { "desde": 1100000.001, "hasta": 1500000, "comision": 15600 },
+            { "desde": 1500000.001, "hasta": 2000000, "comision": 21000 },
+            { "desde": 2000000.001, "hasta": null, "comision": 25200 }
+          ]
+        },
+        "TRAMONTANA": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 6 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 21 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 45 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 75 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 105 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 150 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 210 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 270 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 375 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 525 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 750 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 1050 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 1500 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 2100 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 2700 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 3600 },
+            { "desde": 700000.001, "hasta": 900000, "comision": 4800 },
+            { "desde": 900000.001, "hasta": 1100000, "comision": 6000 },
+            { "desde": 1100000.001, "hasta": 1500000, "comision": 7800 },
+            { "desde": 1500000.001, "hasta": 2000000, "comision": 10500 },
+            { "desde": 2000000.001, "hasta": null, "comision": 12600 }
+          ]
+        }
+      },
+      "6.1TD": {
+        "LEVANTE+": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 218 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 308 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 430 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 540 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 680 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 860 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 1110 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 1380 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 1830 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 2490 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 3450 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 4710 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 6530 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 8880 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 11320 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 14870 },
+            { "desde": 700000.001, "hasta": 900000, "comision": 19570 },
+            { "desde": 900000.001, "hasta": 1100000, "comision": 24080 },
+            { "desde": 1100000.001, "hasta": 1500000, "comision": 31060 },
+            { "desde": 1500000.001, "hasta": 2000000, "comision": 40330 },
+            { "desde": 2000000.001, "hasta": null, "comision": 47900 }
+          ]
+        },
+        "PONIENTE+": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 104 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 164 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 230 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 290 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 370 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 480 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 620 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 780 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 1040 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 1420 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 1970 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 2700 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 3760 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 5140 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 6560 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 8630 },
+            { "desde": 700000.001, "hasta": 900000, "comision": 11380 },
+            { "desde": 900000.001, "hasta": 1100000, "comision": 14040 },
+            { "desde": 1100000.001, "hasta": 1500000, "comision": 18130 },
+            { "desde": 1500000.001, "hasta": 2000000, "comision": 23660 },
+            { "desde": 2000000.001, "hasta": null, "comision": 28150 }
+          ]
+        },
+        "TRAMONTANA+": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 52 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 77 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 115 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 145 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 185 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 240 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 310 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 390 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 515 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 705 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 980 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 1350 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 1880 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 2570 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 3280 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 4310 },
+            { "desde": 700000.001, "hasta": 900000, "comision": 5690 },
+            { "desde": 900000.001, "hasta": 1100000, "comision": 7020 },
+            { "desde": 1100000.001, "hasta": 1500000, "comision": 9060 },
+            { "desde": 1500000.001, "hasta": 2000000, "comision": 11830 },
+            { "desde": 2000000.001, "hasta": null, "comision": 14070 }
+          ]
+        },
+        "CIERZO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 300 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 380 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 450 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 490 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 560 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 640 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 750 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 900 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 1120 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 1460 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 1930 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 2520 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 3300 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 4220 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 5280 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 6700 },
+            { "desde": 700000.001, "hasta": 900000, "comision": 8550 },
+            { "desde": 900000.001, "hasta": 1100000, "comision": 10120 },
+            { "desde": 1100000.001, "hasta": 1500000, "comision": 12790 },
+            { "desde": 1500000.001, "hasta": 2000000, "comision": 15000 },
+            { "desde": 2000000.001, "hasta": null, "comision": 17250 }
+          ]
+        },
+        "LEVANTE": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 20 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 70 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 150 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 250 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 350 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 500 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 700 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 900 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 1250 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 1750 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 2500 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 3500 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 5000 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 7000 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 9000 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 12000 },
+            { "desde": 700000.001, "hasta": 900000, "comision": 16000 },
+            { "desde": 900000.001, "hasta": 1100000, "comision": 20000 },
+            { "desde": 1100000.001, "hasta": 1500000, "comision": 26000 },
+            { "desde": 1500000.001, "hasta": 2000000, "comision": 35000 },
+            { "desde": 2000000.001, "hasta": null, "comision": 42000 }
+          ]
+        },
+        "PONIENTE": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 12 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 42 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 90 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 150 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 210 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 300 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 420 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 540 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 750 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 1050 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 1500 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 2100 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 3000 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 4200 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 5400 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 7200 },
+            { "desde": 700000.001, "hasta": 900000, "comision": 9600 },
+            { "desde": 900000.001, "hasta": 1100000, "comision": 12000 },
+            { "desde": 1100000.001, "hasta": 1500000, "comision": 15600 },
+            { "desde": 1500000.001, "hasta": 2000000, "comision": 21000 },
+            { "desde": 2000000.001, "hasta": null, "comision": 25200 }
+          ]
+        },
+        "TRAMONTANA": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 6 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 21 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 45 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 75 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 105 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 150 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 210 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 270 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 375 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 525 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 750 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 1050 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 1500 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 2100 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 2700 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 3600 },
+            { "desde": 700000.001, "hasta": 900000, "comision": 4800 },
+            { "desde": 900000.001, "hasta": 1100000, "comision": 6000 },
+            { "desde": 1100000.001, "hasta": 1500000, "comision": 7800 },
+            { "desde": 1500000.001, "hasta": 2000000, "comision": 10500 },
+            { "desde": 2000000.001, "hasta": null, "comision": 12600 }
+          ]
+        }
+      },
+      "6.2TD": {
+        "LEVANTE+": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 218 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 308 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 430 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 540 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 680 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 860 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 1110 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 1380 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 1830 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 2490 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 3450 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 4710 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 6530 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 8880 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 11320 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 14870 },
+            { "desde": 700000.001, "hasta": 900000, "comision": 19570 },
+            { "desde": 900000.001, "hasta": 1100000, "comision": 24080 },
+            { "desde": 1100000.001, "hasta": 1500000, "comision": 31060 },
+            { "desde": 1500000.001, "hasta": 2000000, "comision": 40330 },
+            { "desde": 2000000.001, "hasta": null, "comision": 47900 }
+          ]
+        },
+        "PONIENTE+": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 104 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 164 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 230 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 290 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 370 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 480 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 620 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 780 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 1040 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 1420 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 1970 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 2700 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 3760 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 5140 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 6560 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 8630 },
+            { "desde": 700000.001, "hasta": 900000, "comision": 11380 },
+            { "desde": 900000.001, "hasta": 1100000, "comision": 14040 },
+            { "desde": 1100000.001, "hasta": 1500000, "comision": 18130 },
+            { "desde": 1500000.001, "hasta": 2000000, "comision": 23660 },
+            { "desde": 2000000.001, "hasta": null, "comision": 28150 }
+          ]
+        },
+        "TRAMONTANA+": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 52 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 77 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 115 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 145 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 185 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 240 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 310 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 390 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 515 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 705 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 980 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 1350 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 1880 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 2570 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 3280 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 4310 },
+            { "desde": 700000.001, "hasta": 900000, "comision": 5690 },
+            { "desde": 900000.001, "hasta": 1100000, "comision": 7020 },
+            { "desde": 1100000.001, "hasta": 1500000, "comision": 9060 },
+            { "desde": 1500000.001, "hasta": 2000000, "comision": 11830 },
+            { "desde": 2000000.001, "hasta": null, "comision": 14070 }
+          ]
+        },
+        "CIERZO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 300 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 380 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 450 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 490 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 560 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 640 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 750 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 900 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 1120 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 1460 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 1930 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 2520 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 3300 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 4220 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 5280 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 6700 },
+            { "desde": 700000.001, "hasta": 900000, "comision": 8550 },
+            { "desde": 900000.001, "hasta": 1100000, "comision": 10120 },
+            { "desde": 1100000.001, "hasta": 1500000, "comision": 12790 },
+            { "desde": 1500000.001, "hasta": 2000000, "comision": 15000 },
+            { "desde": 2000000.001, "hasta": null, "comision": 17250 }
+          ]
+        },
+        "LEVANTE": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 20 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 70 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 150 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 250 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 350 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 500 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 700 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 900 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 1250 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 1750 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 2500 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 3500 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 5000 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 7000 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 9000 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 12000 },
+            { "desde": 700000.001, "hasta": 900000, "comision": 16000 },
+            { "desde": 900000.001, "hasta": 1100000, "comision": 20000 },
+            { "desde": 1100000.001, "hasta": 1500000, "comision": 26000 },
+            { "desde": 1500000.001, "hasta": 2000000, "comision": 35000 },
+            { "desde": 2000000.001, "hasta": null, "comision": 42000 }
+          ]
+        },
+        "PONIENTE": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 12 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 42 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 90 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 150 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 210 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 300 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 420 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 540 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 750 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 1050 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 1500 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 2100 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 3000 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 4200 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 5400 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 7200 },
+            { "desde": 700000.001, "hasta": 900000, "comision": 9600 },
+            { "desde": 900000.001, "hasta": 1100000, "comision": 12000 },
+            { "desde": 1100000.001, "hasta": 1500000, "comision": 15600 },
+            { "desde": 1500000.001, "hasta": 2000000, "comision": 21000 },
+            { "desde": 2000000.001, "hasta": null, "comision": 25200 }
+          ]
+        },
+        "TRAMONTANA": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 2000, "comision": 6 },
+            { "desde": 2000.001, "hasta": 5000, "comision": 21 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 45 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 75 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 105 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 150 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 210 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 270 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 375 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 525 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 750 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 1050 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 1500 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 2100 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 2700 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 3600 },
+            { "desde": 700000.001, "hasta": 900000, "comision": 4800 },
+            { "desde": 900000.001, "hasta": 1100000, "comision": 6000 },
+            { "desde": 1100000.001, "hasta": 1500000, "comision": 7800 },
+            { "desde": 1500000.001, "hasta": 2000000, "comision": 10500 },
+            { "desde": 2000000.001, "hasta": null, "comision": 12600 }
+          ]
+        }
+      }
+    }
+  },
+  "LOGOS": {
+    "tipo": "variable",
+    "tarifas": {
+      "2.0TD": {
+        "OMEGA PYME FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 110 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 170 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 270 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 474 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 564 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 732 },
+            { "desde": 50000.001, "hasta": 70000, "comision": 948 },
+            { "desde": 70000.001, "hasta": 100000, "comision": 1260 },
+            { "desde": 100000.001, "hasta": null, "comision": 1872 }
+          ]
+        },
+        "EPSILON PYME FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 75 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 110 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 210 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 395 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 470 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 610 },
+            { "desde": 50000.001, "hasta": 70000, "comision": 790 },
+            { "desde": 70000.001, "hasta": 100000, "comision": 1050 },
+            { "desde": 100000.001, "hasta": null, "comision": 1560 }
+          ]
+        },
+        "DELTA PYME FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 55 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 95 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 175 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 320 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 350 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 450 },
+            { "desde": 50000.001, "hasta": 70000, "comision": 600 },
+            { "desde": 70000.001, "hasta": 100000, "comision": 780 },
+            { "desde": 100000.001, "hasta": null, "comision": 1170 }
+          ]
+        },
+        "GAMMA PYME FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 50 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 85 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 150 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 280 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 320 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 410 },
+            { "desde": 50000.001, "hasta": 70000, "comision": 520 },
+            { "desde": 70000.001, "hasta": 100000, "comision": 670 },
+            { "desde": 100000.001, "hasta": null, "comision": 930 }
+          ]
+        },
+        "BETA PYME FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 40 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 70 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 110 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 200 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 270 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 340 },
+            { "desde": 50000.001, "hasta": 70000, "comision": 400 },
+            { "desde": 70000.001, "hasta": 100000, "comision": 490 },
+            { "desde": 100000.001, "hasta": null, "comision": 550 }
+          ]
+        },
+        "SIGMA PYME FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 118 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 196 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 311 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 545 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 649 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 842 },
+            { "desde": 50000.001, "hasta": 70000, "comision": 1090 },
+            { "desde": 70000.001, "hasta": 100000, "comision": 1449 },
+            { "desde": 100000.001, "hasta": null, "comision": 2153 }
+          ]
+        },
+        "EPSILON HOGAR FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 84 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 136 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 240 },
+            { "desde": 20000.001, "hasta": null, "comision": 422 }
+          ]
+        },
+        "EPSILON HOGAR UNICO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 84 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 136 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 240 },
+            { "desde": 20000.001, "hasta": null, "comision": 422 }
+          ]
+        },
+        "DELTA HOGAR FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 56 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 70 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 100 },
+            { "desde": 20000.001, "hasta": null, "comision": 120 }
+          ]
+        },
+        "DELTA HOGAR UNICO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 56 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 70 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 100 },
+            { "desde": 20000.001, "hasta": null, "comision": 120 }
+          ]
+        },
+        "BETA HOGAR FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 38 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 50 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 80 },
+            { "desde": 20000.001, "hasta": null, "comision": 90 }
+          ]
+        },
+        "BETA HOGAR UNICO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 38 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 50 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 80 },
+            { "desde": 20000.001, "hasta": null, "comision": 90 }
+          ]
+        },
+        "SIGMA HOGAR FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 126 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 189 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 315 },
+            { "desde": 20000.001, "hasta": null, "comision": 525 }
+          ]
+        },
+        "SIGMA HOGAR UNICO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 126 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 189 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 315 },
+            { "desde": 20000.001, "hasta": null, "comision": 525 }
+          ]
+        },
+        "OMEGA HOGAR FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 120 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 180 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 300 },
+            { "desde": 20000.001, "hasta": null, "comision": 500 }
+          ]
+        },
+        "OMEGA HOGAR UNICO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 120 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 180 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 300 },
+            { "desde": 20000.001, "hasta": null, "comision": 500 }
+          ]
+        }
+      },
+      "3.0TD": {
+        "OMEGA PYME FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 223 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 360 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 520 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 756 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 956 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 1210 },
+            { "desde": 50000.001, "hasta": 70000, "comision": 1520 },
+            { "desde": 70000.001, "hasta": 100000, "comision": 2200 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 3150 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 4107 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 6024 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 8843 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 10145 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 13588 },
+            { "desde": 700000.001, "hasta": 1200000, "comision": 19317 },
+            { "desde": 1200000.001, "hasta": null, "comision": 23700 }
+          ]
+        },
+        "EPSILON PYME FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 169 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 283 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 348 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 605 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 750 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 880 },
+            { "desde": 50000.001, "hasta": 70000, "comision": 1143 },
+            { "desde": 70000.001, "hasta": 100000, "comision": 1610 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 2305 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 2563 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 3598 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 5380 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 6026 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 8465 },
+            { "desde": 700000.001, "hasta": 1200000, "comision": 10310 },
+            { "desde": 1200000.001, "hasta": null, "comision": 13550 }
+          ]
+        },
+        "DELTA PYME FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 138 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 230 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 255 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 490 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 574 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 680 },
+            { "desde": 50000.001, "hasta": 70000, "comision": 903 },
+            { "desde": 70000.001, "hasta": 100000, "comision": 1280 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 1800 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 2282 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 3120 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 3600 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 4210 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 5764 },
+            { "desde": 700000.001, "hasta": 1200000, "comision": 8920 },
+            { "desde": 1200000.001, "hasta": null, "comision": 11250 }
+          ]
+        },
+        "GAMMA PYME FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 117 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 191 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 217 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 370 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 442 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 520 },
+            { "desde": 50000.001, "hasta": 70000, "comision": 710 },
+            { "desde": 70000.001, "hasta": 100000, "comision": 980 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 1260 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 1640 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 2268 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 3180 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 3650 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 5143 },
+            { "desde": 700000.001, "hasta": 1200000, "comision": 7340 },
+            { "desde": 1200000.001, "hasta": null, "comision": 10000 }
+          ]
+        },
+        "BETA PYME FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 66 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 132 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 174 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 210 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 250 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 364 },
+            { "desde": 50000.001, "hasta": 70000, "comision": 455 },
+            { "desde": 70000.001, "hasta": 100000, "comision": 645 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 732 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 875 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 1520 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 2395 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 2725 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 3400 },
+            { "desde": 700000.001, "hasta": 1200000, "comision": 5600 },
+            { "desde": 1200000.001, "hasta": null, "comision": 8300 }
+          ]
+        },
+        "SIGMA PYME FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 290 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 468 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 676 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 983 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 1243 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 1573 },
+            { "desde": 50000.001, "hasta": 70000, "comision": 1976 },
+            { "desde": 70000.001, "hasta": 100000, "comision": 2860 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 4095 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 5339 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 7831 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 11496 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 13189 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 17664 },
+            { "desde": 700000.001, "hasta": 1200000, "comision": 25112 },
+            { "desde": 1200000.001, "hasta": null, "comision": 30810 }
+          ]
+        }
+      },
+      "6.1TD": {
+        "OMEGA PYME FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 191 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 319 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 405 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 750 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 912 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 1064 },
+            { "desde": 50000.001, "hasta": 70000, "comision": 1414 },
+            { "desde": 70000.001, "hasta": 100000, "comision": 2063 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 2700 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 3327 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 4423 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 6504 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 9131 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 11312 },
+            { "desde": 700000.001, "hasta": 1200000, "comision": 13560 },
+            { "desde": 1200000.001, "hasta": 2500000, "comision": 22361 },
+            { "desde": 2500000.001, "hasta": null, "comision": 29040 }
+          ]
+        },
+        "EPSILON PYME FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 159 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 266 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 337 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 610 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 740 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 865 },
+            { "desde": 50000.001, "hasta": 70000, "comision": 1111 },
+            { "desde": 70000.001, "hasta": 100000, "comision": 1580 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 2200 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 2772 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 3686 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 5420 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 7180 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 9100 },
+            { "desde": 700000.001, "hasta": 1200000, "comision": 11300 },
+            { "desde": 1200000.001, "hasta": 2500000, "comision": 18634 },
+            { "desde": 2500000.001, "hasta": null, "comision": 24200 }
+          ]
+        },
+        "DELTA PYME FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 138 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 222 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 253 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 485 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 555 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 673 },
+            { "desde": 50000.001, "hasta": 70000, "comision": 886 },
+            { "desde": 70000.001, "hasta": 100000, "comision": 1280 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 1775 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 2280 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 2690 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 3900 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 5270 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 6150 },
+            { "desde": 700000.001, "hasta": 1200000, "comision": 8500 },
+            { "desde": 1200000.001, "hasta": 2500000, "comision": 14750 },
+            { "desde": 2500000.001, "hasta": null, "comision": 19500 }
+          ]
+        },
+        "GAMMA PYME FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 113 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 184 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 221 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 370 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 445 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 530 },
+            { "desde": 50000.001, "hasta": 70000, "comision": 685 },
+            { "desde": 70000.001, "hasta": 100000, "comision": 920 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 1310 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 1795 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 2198 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 3280 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 4420 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 5580 },
+            { "desde": 700000.001, "hasta": 1200000, "comision": 7230 },
+            { "desde": 1200000.001, "hasta": 2500000, "comision": 12600 },
+            { "desde": 2500000.001, "hasta": null, "comision": 17800 }
+          ]
+        },
+        "BETA PYME FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 67 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 118 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 164 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 198 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 254 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 355 },
+            { "desde": 50000.001, "hasta": 70000, "comision": 446 },
+            { "desde": 70000.001, "hasta": 100000, "comision": 535 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 710 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 898 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 1350 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 2385 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 3065 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 4205 },
+            { "desde": 700000.001, "hasta": 1200000, "comision": 6050 },
+            { "desde": 1200000.001, "hasta": 2500000, "comision": 11500 },
+            { "desde": 2500000.001, "hasta": null, "comision": 16490 }
+          ]
+        },
+        "SIGMA PYME FIJO": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 286 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 478 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 607 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 1125 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 1368 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 1596 },
+            { "desde": 50000.001, "hasta": 70000, "comision": 2121 },
+            { "desde": 70000.001, "hasta": 100000, "comision": 3094 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 4050 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 4990 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 6635 },
+            { "desde": 300000.001, "hasta": 400000, "comision": 9756 },
+            { "desde": 400000.001, "hasta": 500000, "comision": 13697 },
+            { "desde": 500000.001, "hasta": 700000, "comision": 16968 },
+            { "desde": 700000.001, "hasta": 1200000, "comision": 20341 },
+            { "desde": 1200000.001, "hasta": 2500000, "comision": 33541 },
+            { "desde": 2500000.001, "hasta": null, "comision": 43560 }
+          ]
+        }
+      }
+    }
+  },
+  "TOTAL ENERGIES": {
+    "tipo": "variable",
+    "tarifas": {
+      "2.0TD": {
+        "CLASICA TE1": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 30 },
+            { "desde": 1501, "hasta": 3000, "comision": 52 },
+            { "desde": 3001, "hasta": 5000, "comision": 75 },
+            { "desde": 5001, "hasta": 10000, "comision": 105 },
+            { "desde": 10001, "hasta": 20000, "comision": 185 },
+            { "desde": 20001, "hasta": 35000, "comision": 225 },
+            { "desde": 35001, "hasta": 50000, "comision": 300 },
+            { "desde": 50001, "hasta": 65000, "comision": 415 },
+            { "desde": 65001, "hasta": 85000, "comision": 485 },
+            { "desde": 85001, "hasta": null, "comision": 575 }
+          ]
+        },
+        "CLASICA TE2": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 44 },
+            { "desde": 1501, "hasta": 3000, "comision": 75 },
+            { "desde": 3001, "hasta": 5000, "comision": 107 },
+            { "desde": 5001, "hasta": 10000, "comision": 146 },
+            { "desde": 10001, "hasta": 20000, "comision": 255 },
+            { "desde": 20001, "hasta": 35000, "comision": 304 },
+            { "desde": 35001, "hasta": 50000, "comision": 401 },
+            { "desde": 50001, "hasta": 65000, "comision": 552 },
+            { "desde": 65001, "hasta": 85000, "comision": 644 },
+            { "desde": 85001, "hasta": null, "comision": 760 }
+          ]
+        },
+        "CLASICA TE3": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 51 },
+            { "desde": 1501, "hasta": 3000, "comision": 86 },
+            { "desde": 3001, "hasta": 5000, "comision": 121 },
+            { "desde": 5001, "hasta": 10000, "comision": 165 },
+            { "desde": 10001, "hasta": 20000, "comision": 284 },
+            { "desde": 20001, "hasta": 35000, "comision": 336 },
+            { "desde": 35001, "hasta": 50000, "comision": 440 },
+            { "desde": 50001, "hasta": 65000, "comision": 602 },
+            { "desde": 65001, "hasta": 85000, "comision": 702 },
+            { "desde": 85001, "hasta": null, "comision": 828 }
+          ]
+        },
+        "CLASICA TE4": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 70 },
+            { "desde": 1501, "hasta": 3000, "comision": 100 },
+            { "desde": 3001, "hasta": 5000, "comision": 150 },
+            { "desde": 5001, "hasta": 10000, "comision": 210 },
+            { "desde": 10001, "hasta": 20000, "comision": 350 },
+            { "desde": 20001, "hasta": 35000, "comision": 435 },
+            { "desde": 35001, "hasta": 50000, "comision": 600 },
+            { "desde": 50001, "hasta": 65000, "comision": 750 },
+            { "desde": 65001, "hasta": 85000, "comision": 900 },
+            { "desde": 85001, "hasta": null, "comision": 1100 }
+          ]
+        },
+        "CLASICA TE5": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 100 },
+            { "desde": 1501, "hasta": 3000, "comision": 150 },
+            { "desde": 3001, "hasta": 5000, "comision": 200 },
+            { "desde": 5001, "hasta": 10000, "comision": 260 },
+            { "desde": 10001, "hasta": 20000, "comision": 430 },
+            { "desde": 20001, "hasta": 35000, "comision": 650 },
+            { "desde": 35001, "hasta": 50000, "comision": 920 },
+            { "desde": 50001, "hasta": 65000, "comision": 1150 },
+            { "desde": 65001, "hasta": 85000, "comision": 1450 },
+            { "desde": 85001, "hasta": null, "comision": 1700 }
+          ]
+        },
+        "SOUL TE3": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 51 },
+            { "desde": 1501, "hasta": 3000, "comision": 86 },
+            { "desde": 3001, "hasta": 5000, "comision": 121 },
+            { "desde": 5001, "hasta": 10000, "comision": 165 },
+            { "desde": 10001, "hasta": 20000, "comision": 284 },
+            { "desde": 20001, "hasta": 35000, "comision": 336 },
+            { "desde": 35001, "hasta": 50000, "comision": 440 },
+            { "desde": 50001, "hasta": 65000, "comision": 602 },
+            { "desde": 65001, "hasta": 85000, "comision": 702 },
+            { "desde": 85001, "hasta": null, "comision": 828 }
+          ]
+        },
+        "SOUL TE4": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 70 },
+            { "desde": 1501, "hasta": 3000, "comision": 100 },
+            { "desde": 3001, "hasta": 5000, "comision": 150 },
+            { "desde": 5001, "hasta": 10000, "comision": 210 },
+            { "desde": 10001, "hasta": 20000, "comision": 350 },
+            { "desde": 20001, "hasta": 35000, "comision": 435 },
+            { "desde": 35001, "hasta": 50000, "comision": 600 },
+            { "desde": 50001, "hasta": 65000, "comision": 750 },
+            { "desde": 65001, "hasta": 85000, "comision": 900 },
+            { "desde": 85001, "hasta": null, "comision": 1100 }
+          ]
+        },
+        "SOUL TE5": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 100 },
+            { "desde": 1501, "hasta": 3000, "comision": 150 },
+            { "desde": 3001, "hasta": 5000, "comision": 200 },
+            { "desde": 5001, "hasta": 10000, "comision": 260 },
+            { "desde": 10001, "hasta": 20000, "comision": 430 },
+            { "desde": 20001, "hasta": 35000, "comision": 650 },
+            { "desde": 35001, "hasta": 50000, "comision": 920 },
+            { "desde": 50001, "hasta": 65000, "comision": 1150 },
+            { "desde": 65001, "hasta": 85000, "comision": 1450 },
+            { "desde": 85001, "hasta": null, "comision": 1700 }
+          ]
+        },
+        "CLASICA TE1 UNICA": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 30 },
+            { "desde": 1501, "hasta": 3000, "comision": 52 },
+            { "desde": 3001, "hasta": 5000, "comision": 75 },
+            { "desde": 5001, "hasta": 10000, "comision": 105 },
+            { "desde": 10001, "hasta": 20000, "comision": 185 },
+            { "desde": 20001, "hasta": 35000, "comision": 225 },
+            { "desde": 35001, "hasta": 50000, "comision": 300 },
+            { "desde": 50001, "hasta": 65000, "comision": 415 },
+            { "desde": 65001, "hasta": 85000, "comision": 485 },
+            { "desde": 85001, "hasta": null, "comision": 575 }
+          ]
+        },
+        "CLASICA TE2 UNICA": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 44 },
+            { "desde": 1501, "hasta": 3000, "comision": 75 },
+            { "desde": 3001, "hasta": 5000, "comision": 107 },
+            { "desde": 5001, "hasta": 10000, "comision": 146 },
+            { "desde": 10001, "hasta": 20000, "comision": 255 },
+            { "desde": 20001, "hasta": 35000, "comision": 304 },
+            { "desde": 35001, "hasta": 50000, "comision": 401 },
+            { "desde": 50001, "hasta": 65000, "comision": 552 },
+            { "desde": 65001, "hasta": 85000, "comision": 644 },
+            { "desde": 85001, "hasta": null, "comision": 760 }
+          ]
+        },
+        "CLASICA TE3 UNICA": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 51 },
+            { "desde": 1501, "hasta": 3000, "comision": 86 },
+            { "desde": 3001, "hasta": 5000, "comision": 121 },
+            { "desde": 5001, "hasta": 10000, "comision": 165 },
+            { "desde": 10001, "hasta": 20000, "comision": 284 },
+            { "desde": 20001, "hasta": 35000, "comision": 336 },
+            { "desde": 35001, "hasta": 50000, "comision": 440 },
+            { "desde": 50001, "hasta": 65000, "comision": 602 },
+            { "desde": 65001, "hasta": 85000, "comision": 702 },
+            { "desde": 85001, "hasta": null, "comision": 828 }
+          ]
+        },
+        "CLASICA TE4 UNICA": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 70 },
+            { "desde": 1501, "hasta": 3000, "comision": 100 },
+            { "desde": 3001, "hasta": 5000, "comision": 150 },
+            { "desde": 5001, "hasta": 10000, "comision": 210 },
+            { "desde": 10001, "hasta": 20000, "comision": 350 },
+            { "desde": 20001, "hasta": 35000, "comision": 435 },
+            { "desde": 35001, "hasta": 50000, "comision": 600 },
+            { "desde": 50001, "hasta": 65000, "comision": 750 },
+            { "desde": 65001, "hasta": 85000, "comision": 900 },
+            { "desde": 85001, "hasta": null, "comision": 1100 }
+          ]
+        },
+        "CLASICA TE5 UNICA": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 100 },
+            { "desde": 1501, "hasta": 3000, "comision": 150 },
+            { "desde": 3001, "hasta": 5000, "comision": 200 },
+            { "desde": 5001, "hasta": 10000, "comision": 260 },
+            { "desde": 10001, "hasta": 20000, "comision": 430 },
+            { "desde": 20001, "hasta": 35000, "comision": 650 },
+            { "desde": 35001, "hasta": 50000, "comision": 920 },
+            { "desde": 50001, "hasta": 65000, "comision": 1150 },
+            { "desde": 65001, "hasta": 85000, "comision": 1450 },
+            { "desde": 85001, "hasta": null, "comision": 1700 }
+          ]
+        }
+      },
+      "3.0TD": {
+        "CLASICA TE1": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 80 },
+            { "desde": 1501, "hasta": 3000, "comision": 100 },
+            { "desde": 3001, "hasta": 5000, "comision": 115 },
+            { "desde": 5001, "hasta": 10000, "comision": 151 },
+            { "desde": 10001, "hasta": 20000, "comision": 190 },
+            { "desde": 20001, "hasta": 30000, "comision": 275 },
+            { "desde": 30001, "hasta": 40000, "comision": 334 },
+            { "desde": 40001, "hasta": 50000, "comision": 395 },
+            { "desde": 50001, "hasta": 75000, "comision": 560 },
+            { "desde": 75001, "hasta": 100000, "comision": 700 },
+            { "desde": 100001, "hasta": 150000, "comision": 900 },
+            { "desde": 150001, "hasta": 200000, "comision": 1150 },
+            { "desde": 200001, "hasta": 300000, "comision": 1400 },
+            { "desde": 300001, "hasta": 500000, "comision": 1900 },
+            { "desde": 500001, "hasta": 750000, "comision": 3000 },
+            { "desde": 750001, "hasta": null, "comision": 4500 }
+          ]
+        },
+        "CLASICA TE2": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 118 },
+            { "desde": 1501, "hasta": 3000, "comision": 144 },
+            { "desde": 3001, "hasta": 5000, "comision": 150 },
+            { "desde": 5001, "hasta": 10000, "comision": 170 },
+            { "desde": 10001, "hasta": 20000, "comision": 251 },
+            { "desde": 20001, "hasta": 30000, "comision": 361 },
+            { "desde": 30001, "hasta": 40000, "comision": 434 },
+            { "desde": 40001, "hasta": 50000, "comision": 496 },
+            { "desde": 50001, "hasta": 75000, "comision": 654 },
+            { "desde": 75001, "hasta": 100000, "comision": 849 },
+            { "desde": 100001, "hasta": 150000, "comision": 1070 },
+            { "desde": 150001, "hasta": 200000, "comision": 1345 },
+            { "desde": 200001, "hasta": 300000, "comision": 1616 },
+            { "desde": 300001, "hasta": 500000, "comision": 2164 },
+            { "desde": 500001, "hasta": 750000, "comision": 3396 },
+            { "desde": 750001, "hasta": null, "comision": 5076 }
+          ]
+        },
+        "CLASICA TE3": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 129 },
+            { "desde": 1501, "hasta": 3000, "comision": 158 },
+            { "desde": 3001, "hasta": 5000, "comision": 160 },
+            { "desde": 5001, "hasta": 10000, "comision": 189 },
+            { "desde": 10001, "hasta": 20000, "comision": 283 },
+            { "desde": 20001, "hasta": 30000, "comision": 408 },
+            { "desde": 30001, "hasta": 40000, "comision": 496 },
+            { "desde": 40001, "hasta": 50000, "comision": 569 },
+            { "desde": 50001, "hasta": 75000, "comision": 757 },
+            { "desde": 75001, "hasta": 100000, "comision": 987 },
+            { "desde": 100001, "hasta": 150000, "comision": 1252 },
+            { "desde": 150001, "hasta": 200000, "comision": 1584 },
+            { "desde": 200001, "hasta": 300000, "comision": 1912 },
+            { "desde": 300001, "hasta": 500000, "comision": 2573 },
+            { "desde": 500001, "hasta": 750000, "comision": 4047 },
+            { "desde": 750001, "hasta": null, "comision": 6057 }
+          ]
+        },
+        "CLASICA TE4": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 200 },
+            { "desde": 1501, "hasta": 3000, "comision": 250 },
+            { "desde": 3001, "hasta": 5000, "comision": 300 },
+            { "desde": 5001, "hasta": 10000, "comision": 350 },
+            { "desde": 10001, "hasta": 20000, "comision": 425 },
+            { "desde": 20001, "hasta": 30000, "comision": 660 },
+            { "desde": 30001, "hasta": 40000, "comision": 775 },
+            { "desde": 40001, "hasta": 50000, "comision": 900 },
+            { "desde": 50001, "hasta": 75000, "comision": 1170 },
+            { "desde": 75001, "hasta": 100000, "comision": 1650 },
+            { "desde": 100001, "hasta": 150000, "comision": 2050 },
+            { "desde": 150001, "hasta": 200000, "comision": 2700 },
+            { "desde": 200001, "hasta": 300000, "comision": 3500 },
+            { "desde": 300001, "hasta": 500000, "comision": 5000 },
+            { "desde": 500001, "hasta": 750000, "comision": 6700 },
+            { "desde": 750001, "hasta": null, "comision": 9250 }
+          ]
+        },
+        "CLASICA TE5": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 265 },
+            { "desde": 1501, "hasta": 3000, "comision": 300 },
+            { "desde": 3001, "hasta": 5000, "comision": 350 },
+            { "desde": 5001, "hasta": 10000, "comision": 400 },
+            { "desde": 10001, "hasta": 20000, "comision": 495 },
+            { "desde": 20001, "hasta": 30000, "comision": 780 },
+            { "desde": 30001, "hasta": 40000, "comision": 935 },
+            { "desde": 40001, "hasta": 50000, "comision": 1170 },
+            { "desde": 50001, "hasta": 75000, "comision": 1500 },
+            { "desde": 75001, "hasta": 100000, "comision": 1700 },
+            { "desde": 100001, "hasta": 150000, "comision": 2300 },
+            { "desde": 150001, "hasta": 200000, "comision": 3000 },
+            { "desde": 200001, "hasta": 300000, "comision": 4000 },
+            { "desde": 300001, "hasta": 500000, "comision": 6000 },
+            { "desde": 500001, "hasta": 750000, "comision": 9000 },
+            { "desde": 750001, "hasta": null, "comision": 12000 }
+          ]
+        },
+        "SOUL TE3": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 129 },
+            { "desde": 1501, "hasta": 3000, "comision": 158 },
+            { "desde": 3001, "hasta": 5000, "comision": 160 },
+            { "desde": 5001, "hasta": 10000, "comision": 189 },
+            { "desde": 10001, "hasta": 20000, "comision": 283 },
+            { "desde": 20001, "hasta": 30000, "comision": 408 },
+            { "desde": 30001, "hasta": 40000, "comision": 496 },
+            { "desde": 40001, "hasta": 50000, "comision": 569 },
+            { "desde": 50001, "hasta": 75000, "comision": 757 },
+            { "desde": 75001, "hasta": 100000, "comision": 987 },
+            { "desde": 100001, "hasta": 150000, "comision": 1252 },
+            { "desde": 150001, "hasta": 200000, "comision": 1584 },
+            { "desde": 200001, "hasta": 300000, "comision": 1912 },
+            { "desde": 300001, "hasta": 500000, "comision": 2573 },
+            { "desde": 500001, "hasta": 750000, "comision": 4047 },
+            { "desde": 750001, "hasta": null, "comision": 6057 }
+          ]
+        },
+        "SOUL TE4": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 200 },
+            { "desde": 1501, "hasta": 3000, "comision": 250 },
+            { "desde": 3001, "hasta": 5000, "comision": 300 },
+            { "desde": 5001, "hasta": 10000, "comision": 350 },
+            { "desde": 10001, "hasta": 20000, "comision": 425 },
+            { "desde": 20001, "hasta": 30000, "comision": 660 },
+            { "desde": 30001, "hasta": 40000, "comision": 775 },
+            { "desde": 40001, "hasta": 50000, "comision": 900 },
+            { "desde": 50001, "hasta": 75000, "comision": 1170 },
+            { "desde": 75001, "hasta": 100000, "comision": 1650 },
+            { "desde": 100001, "hasta": 150000, "comision": 2050 },
+            { "desde": 150001, "hasta": 200000, "comision": 2700 },
+            { "desde": 200001, "hasta": 300000, "comision": 3500 },
+            { "desde": 300001, "hasta": 500000, "comision": 5000 },
+            { "desde": 500001, "hasta": 750000, "comision": 6700 },
+            { "desde": 750001, "hasta": null, "comision": 9250 }
+          ]
+        },
+        "SOUL TE5": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 265 },
+            { "desde": 1501, "hasta": 3000, "comision": 300 },
+            { "desde": 3001, "hasta": 5000, "comision": 350 },
+            { "desde": 5001, "hasta": 10000, "comision": 400 },
+            { "desde": 10001, "hasta": 20000, "comision": 495 },
+            { "desde": 20001, "hasta": 30000, "comision": 780 },
+            { "desde": 30001, "hasta": 40000, "comision": 935 },
+            { "desde": 40001, "hasta": 50000, "comision": 1170 },
+            { "desde": 50001, "hasta": 75000, "comision": 1500 },
+            { "desde": 75001, "hasta": 100000, "comision": 1700 },
+            { "desde": 100001, "hasta": 150000, "comision": 2300 },
+            { "desde": 150001, "hasta": 200000, "comision": 3000 },
+            { "desde": 200001, "hasta": 300000, "comision": 4000 },
+            { "desde": 300001, "hasta": 500000, "comision": 6000 },
+            { "desde": 500001, "hasta": 750000, "comision": 9000 },
+            { "desde": 750001, "hasta": null, "comision": 12000 }
+          ]
+        },
+        "CLASICA TE1 UNICA": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 80 },
+            { "desde": 1501, "hasta": 3000, "comision": 100 },
+            { "desde": 3001, "hasta": 5000, "comision": 115 },
+            { "desde": 5001, "hasta": 10000, "comision": 151 },
+            { "desde": 10001, "hasta": 20000, "comision": 190 },
+            { "desde": 20001, "hasta": 30000, "comision": 275 },
+            { "desde": 30001, "hasta": 40000, "comision": 334 },
+            { "desde": 40001, "hasta": 50000, "comision": 395 },
+            { "desde": 50001, "hasta": 75000, "comision": 560 },
+            { "desde": 75001, "hasta": 100000, "comision": 700 },
+            { "desde": 100001, "hasta": 150000, "comision": 900 },
+            { "desde": 150001, "hasta": 200000, "comision": 1150 },
+            { "desde": 200001, "hasta": 300000, "comision": 1400 },
+            { "desde": 300001, "hasta": 500000, "comision": 1900 },
+            { "desde": 500001, "hasta": 750000, "comision": 3000 },
+            { "desde": 750001, "hasta": null, "comision": 4500 }
+          ]
+        },
+        "CLASICA TE2 UNICA": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 118 },
+            { "desde": 1501, "hasta": 3000, "comision": 144 },
+            { "desde": 3001, "hasta": 5000, "comision": 150 },
+            { "desde": 5001, "hasta": 10000, "comision": 170 },
+            { "desde": 10001, "hasta": 20000, "comision": 251 },
+            { "desde": 20001, "hasta": 30000, "comision": 361 },
+            { "desde": 30001, "hasta": 40000, "comision": 434 },
+            { "desde": 40001, "hasta": 50000, "comision": 496 },
+            { "desde": 50001, "hasta": 75000, "comision": 654 },
+            { "desde": 75001, "hasta": 100000, "comision": 849 },
+            { "desde": 100001, "hasta": 150000, "comision": 1070 },
+            { "desde": 150001, "hasta": 200000, "comision": 1345 },
+            { "desde": 200001, "hasta": 300000, "comision": 1616 },
+            { "desde": 300001, "hasta": 500000, "comision": 2164 },
+            { "desde": 500001, "hasta": 750000, "comision": 3396 },
+            { "desde": 750001, "hasta": null, "comision": 5076 }
+          ]
+        },
+        "CLASICA TE3 UNICA": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 129 },
+            { "desde": 1501, "hasta": 3000, "comision": 158 },
+            { "desde": 3001, "hasta": 5000, "comision": 160 },
+            { "desde": 5001, "hasta": 10000, "comision": 189 },
+            { "desde": 10001, "hasta": 20000, "comision": 283 },
+            { "desde": 20001, "hasta": 30000, "comision": 408 },
+            { "desde": 30001, "hasta": 40000, "comision": 496 },
+            { "desde": 40001, "hasta": 50000, "comision": 569 },
+            { "desde": 50001, "hasta": 75000, "comision": 757 },
+            { "desde": 75001, "hasta": 100000, "comision": 987 },
+            { "desde": 100001, "hasta": 150000, "comision": 1252 },
+            { "desde": 150001, "hasta": 200000, "comision": 1584 },
+            { "desde": 200001, "hasta": 300000, "comision": 1912 },
+            { "desde": 300001, "hasta": 500000, "comision": 2573 },
+            { "desde": 500001, "hasta": 750000, "comision": 4047 },
+            { "desde": 750001, "hasta": null, "comision": 6057 }
+          ]
+        },
+        "CLASICA TE4 UNICA": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 200 },
+            { "desde": 1501, "hasta": 3000, "comision": 250 },
+            { "desde": 3001, "hasta": 5000, "comision": 300 },
+            { "desde": 5001, "hasta": 10000, "comision": 350 },
+            { "desde": 10001, "hasta": 20000, "comision": 425 },
+            { "desde": 20001, "hasta": 30000, "comision": 660 },
+            { "desde": 30001, "hasta": 40000, "comision": 775 },
+            { "desde": 40001, "hasta": 50000, "comision": 900 },
+            { "desde": 50001, "hasta": 75000, "comision": 1170 },
+            { "desde": 75001, "hasta": 100000, "comision": 1650 },
+            { "desde": 100001, "hasta": 150000, "comision": 2050 },
+            { "desde": 150001, "hasta": 200000, "comision": 2700 },
+            { "desde": 200001, "hasta": 300000, "comision": 3500 },
+            { "desde": 300001, "hasta": 500000, "comision": 5000 },
+            { "desde": 500001, "hasta": 750000, "comision": 6700 },
+            { "desde": 750001, "hasta": null, "comision": 9250 }
+          ]
+        },
+        "CLASICA TE5 UNICA": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 1500, "comision": 265 },
+            { "desde": 1501, "hasta": 3000, "comision": 300 },
+            { "desde": 3001, "hasta": 5000, "comision": 350 },
+            { "desde": 5001, "hasta": 10000, "comision": 400 },
+            { "desde": 10001, "hasta": 20000, "comision": 495 },
+            { "desde": 20001, "hasta": 30000, "comision": 780 },
+            { "desde": 30001, "hasta": 40000, "comision": 935 },
+            { "desde": 40001, "hasta": 50000, "comision": 1170 },
+            { "desde": 50001, "hasta": 75000, "comision": 1500 },
+            { "desde": 75001, "hasta": 100000, "comision": 1700 },
+            { "desde": 100001, "hasta": 150000, "comision": 2300 },
+            { "desde": 150001, "hasta": 200000, "comision": 3000 },
+            { "desde": 200001, "hasta": 300000, "comision": 4000 },
+            { "desde": 300001, "hasta": 500000, "comision": 6000 },
+            { "desde": 500001, "hasta": 750000, "comision": 9000 },
+            { "desde": 750001, "hasta": null, "comision": 12000 }
+          ]
+        }
+      },
+      "6.1TD": {
+        "CLASICA TE1": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 3000, "comision": 190 },
+            { "desde": 3001, "hasta": 5000, "comision": 214 },
+            { "desde": 5001, "hasta": 10000, "comision": 281 },
+            { "desde": 10001, "hasta": 20000, "comision": 300 },
+            { "desde": 20001, "hasta": 30000, "comision": 400 },
+            { "desde": 30001, "hasta": 40000, "comision": 470 },
+            { "desde": 40001, "hasta": 50000, "comision": 580 },
+            { "desde": 50001, "hasta": 75000, "comision": 674 },
+            { "desde": 75001, "hasta": 100000, "comision": 710 },
+            { "desde": 100001, "hasta": 150000, "comision": 910 },
+            { "desde": 150001, "hasta": 200000, "comision": 1300 },
+            { "desde": 200001, "hasta": 300000, "comision": 1700 },
+            { "desde": 300001, "hasta": 500000, "comision": 2530 },
+            { "desde": 500001, "hasta": 750000, "comision": 3700 },
+            { "desde": 750001, "hasta": 1000000, "comision": 5000 },
+            { "desde": 1000001, "hasta": 1250000, "comision": 6350 },
+            { "desde": 1250001, "hasta": null, "comision": 7750 }
+          ]
+        },
+        "CLASICA TE2": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 3000, "comision": 282 },
+            { "desde": 3001, "hasta": 5000, "comision": 313 },
+            { "desde": 5001, "hasta": 10000, "comision": 406 },
+            { "desde": 10001, "hasta": 20000, "comision": 420 },
+            { "desde": 20001, "hasta": 30000, "comision": 550 },
+            { "desde": 30001, "hasta": 40000, "comision": 632 },
+            { "desde": 40001, "hasta": 50000, "comision": 775 },
+            { "desde": 50001, "hasta": 75000, "comision": 879 },
+            { "desde": 75001, "hasta": 100000, "comision": 908 },
+            { "desde": 100001, "hasta": 150000, "comision": 1134 },
+            { "desde": 150001, "hasta": 200000, "comision": 1590 },
+            { "desde": 200001, "hasta": 300000, "comision": 2035 },
+            { "desde": 300001, "hasta": 500000, "comision": 2960 },
+            { "desde": 500001, "hasta": 750000, "comision": 4258 },
+            { "desde": 750001, "hasta": 1000000, "comision": 5702 },
+            { "desde": 1000001, "hasta": 1250000, "comision": 7250 },
+            { "desde": 1250001, "hasta": null, "comision": 8500 }
+          ]
+        },
+        "CLASICA TE3": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 3000, "comision": 306 },
+            { "desde": 3001, "hasta": 5000, "comision": 341 },
+            { "desde": 5001, "hasta": 10000, "comision": 445 },
+            { "desde": 10001, "hasta": 20000, "comision": 465 },
+            { "desde": 20001, "hasta": 30000, "comision": 612 },
+            { "desde": 30001, "hasta": 40000, "comision": 709 },
+            { "desde": 40001, "hasta": 50000, "comision": 871 },
+            { "desde": 50001, "hasta": 75000, "comision": 996 },
+            { "desde": 75001, "hasta": 100000, "comision": 1036 },
+            { "desde": 100001, "hasta": 150000, "comision": 1305 },
+            { "desde": 150001, "hasta": 200000, "comision": 1843 },
+            { "desde": 200001, "hasta": 300000, "comision": 2376 },
+            { "desde": 300001, "hasta": 500000, "comision": 3484 },
+            { "desde": 500001, "hasta": 750000, "comision": 5043 },
+            { "desde": 750001, "hasta": 1000000, "comision": 6777 },
+            { "desde": 1000001, "hasta": 1250000, "comision": 8500 },
+            { "desde": 1250001, "hasta": null, "comision": 10000 }
+          ]
+        },
+        "CLASICA TE4": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 3000, "comision": 400 },
+            { "desde": 3001, "hasta": 5000, "comision": 425 },
+            { "desde": 5001, "hasta": 10000, "comision": 600 },
+            { "desde": 10001, "hasta": 20000, "comision": 700 },
+            { "desde": 20001, "hasta": 30000, "comision": 850 },
+            { "desde": 30001, "hasta": 40000, "comision": 1000 },
+            { "desde": 40001, "hasta": 50000, "comision": 1250 },
+            { "desde": 50001, "hasta": 75000, "comision": 1450 },
+            { "desde": 75001, "hasta": 100000, "comision": 1800 },
+            { "desde": 100001, "hasta": 150000, "comision": 2200 },
+            { "desde": 150001, "hasta": 200000, "comision": 2800 },
+            { "desde": 200001, "hasta": 300000, "comision": 3650 },
+            { "desde": 300001, "hasta": 500000, "comision": 5250 },
+            { "desde": 500001, "hasta": 750000, "comision": 7200 },
+            { "desde": 750001, "hasta": 1000000, "comision": 8800 },
+            { "desde": 1000001, "hasta": 1250000, "comision": 13000 },
+            { "desde": 1250001, "hasta": null, "comision": 15000 }
+          ]
+        },
+        "CLASICA TE5": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 3000, "comision": 425 },
+            { "desde": 3001, "hasta": 5000, "comision": 450 },
+            { "desde": 5001, "hasta": 10000, "comision": 650 },
+            { "desde": 10001, "hasta": 20000, "comision": 750 },
+            { "desde": 20001, "hasta": 30000, "comision": 900 },
+            { "desde": 30001, "hasta": 40000, "comision": 1050 },
+            { "desde": 40001, "hasta": 50000, "comision": 1300 },
+            { "desde": 50001, "hasta": 75000, "comision": 1500 },
+            { "desde": 75001, "hasta": 100000, "comision": 2250 },
+            { "desde": 100001, "hasta": 150000, "comision": 2700 },
+            { "desde": 150001, "hasta": 200000, "comision": 3350 },
+            { "desde": 200001, "hasta": 300000, "comision": 4000 },
+            { "desde": 300001, "hasta": 500000, "comision": 6250 },
+            { "desde": 500001, "hasta": 750000, "comision": 8500 },
+            { "desde": 750001, "hasta": 1000000, "comision": 10500 },
+            { "desde": 1000001, "hasta": 1250000, "comision": 12500 },
+            { "desde": 1250001, "hasta": null, "comision": 17500 }
+          ]
+        },
+        "SOUL TE3": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 3000, "comision": 306 },
+            { "desde": 3001, "hasta": 5000, "comision": 341 },
+            { "desde": 5001, "hasta": 10000, "comision": 445 },
+            { "desde": 10001, "hasta": 20000, "comision": 465 },
+            { "desde": 20001, "hasta": 30000, "comision": 612 },
+            { "desde": 30001, "hasta": 40000, "comision": 709 },
+            { "desde": 40001, "hasta": 50000, "comision": 871 },
+            { "desde": 50001, "hasta": 75000, "comision": 996 },
+            { "desde": 75001, "hasta": 100000, "comision": 1036 },
+            { "desde": 100001, "hasta": 150000, "comision": 1305 },
+            { "desde": 150001, "hasta": 200000, "comision": 1843 },
+            { "desde": 200001, "hasta": 300000, "comision": 2376 },
+            { "desde": 300001, "hasta": 500000, "comision": 3484 },
+            { "desde": 500001, "hasta": 750000, "comision": 5043 },
+            { "desde": 750001, "hasta": 1000000, "comision": 6777 },
+            { "desde": 1000001, "hasta": 1250000, "comision": 8500 },
+            { "desde": 1250001, "hasta": null, "comision": 10000 }
+          ]
+        },
+        "SOUL TE4": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 3000, "comision": 400 },
+            { "desde": 3001, "hasta": 5000, "comision": 425 },
+            { "desde": 5001, "hasta": 10000, "comision": 600 },
+            { "desde": 10001, "hasta": 20000, "comision": 700 },
+            { "desde": 20001, "hasta": 30000, "comision": 850 },
+            { "desde": 30001, "hasta": 40000, "comision": 1000 },
+            { "desde": 40001, "hasta": 50000, "comision": 1250 },
+            { "desde": 50001, "hasta": 75000, "comision": 1450 },
+            { "desde": 75001, "hasta": 100000, "comision": 1800 },
+            { "desde": 100001, "hasta": 150000, "comision": 2200 },
+            { "desde": 150001, "hasta": 200000, "comision": 2800 },
+            { "desde": 200001, "hasta": 300000, "comision": 3650 },
+            { "desde": 300001, "hasta": 500000, "comision": 5250 },
+            { "desde": 500001, "hasta": 750000, "comision": 7200 },
+            { "desde": 750001, "hasta": 1000000, "comision": 8800 },
+            { "desde": 1000001, "hasta": 1250000, "comision": 13000 },
+            { "desde": 1250001, "hasta": null, "comision": 15000 }
+          ]
+        },
+        "SOUL TE5": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 3000, "comision": 425 },
+            { "desde": 3001, "hasta": 5000, "comision": 450 },
+            { "desde": 5001, "hasta": 10000, "comision": 650 },
+            { "desde": 10001, "hasta": 20000, "comision": 750 },
+            { "desde": 20001, "hasta": 30000, "comision": 900 },
+            { "desde": 30001, "hasta": 40000, "comision": 1050 },
+            { "desde": 40001, "hasta": 50000, "comision": 1300 },
+            { "desde": 50001, "hasta": 75000, "comision": 1500 },
+            { "desde": 75001, "hasta": 100000, "comision": 2250 },
+            { "desde": 100001, "hasta": 150000, "comision": 2700 },
+            { "desde": 150001, "hasta": 200000, "comision": 3350 },
+            { "desde": 200001, "hasta": 300000, "comision": 4000 },
+            { "desde": 300001, "hasta": 500000, "comision": 6250 },
+            { "desde": 500001, "hasta": 750000, "comision": 8500 },
+            { "desde": 750001, "hasta": 1000000, "comision": 10500 },
+            { "desde": 1000001, "hasta": 1250000, "comision": 12500 },
+            { "desde": 1250001, "hasta": null, "comision": 17500 }
+          ]
+        },
+        "CLASICA TE1 UNICA": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 3000, "comision": 190 },
+            { "desde": 3001, "hasta": 5000, "comision": 214 },
+            { "desde": 5001, "hasta": 10000, "comision": 281 },
+            { "desde": 10001, "hasta": 20000, "comision": 300 },
+            { "desde": 20001, "hasta": 30000, "comision": 400 },
+            { "desde": 30001, "hasta": 40000, "comision": 470 },
+            { "desde": 40001, "hasta": 50000, "comision": 580 },
+            { "desde": 50001, "hasta": 75000, "comision": 674 },
+            { "desde": 75001, "hasta": 100000, "comision": 710 },
+            { "desde": 100001, "hasta": 150000, "comision": 910 },
+            { "desde": 150001, "hasta": 200000, "comision": 1300 },
+            { "desde": 200001, "hasta": 300000, "comision": 1700 },
+            { "desde": 300001, "hasta": 500000, "comision": 2530 },
+            { "desde": 500001, "hasta": 750000, "comision": 3700 },
+            { "desde": 750001, "hasta": 1000000, "comision": 5000 },
+            { "desde": 1000001, "hasta": 1250000, "comision": 6350 },
+            { "desde": 1250001, "hasta": null, "comision": 7750 }
+          ]
+        },
+        "CLASICA TE2 UNICA": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 3000, "comision": 282 },
+            { "desde": 3001, "hasta": 5000, "comision": 313 },
+            { "desde": 5001, "hasta": 10000, "comision": 406 },
+            { "desde": 10001, "hasta": 20000, "comision": 420 },
+            { "desde": 20001, "hasta": 30000, "comision": 550 },
+            { "desde": 30001, "hasta": 40000, "comision": 632 },
+            { "desde": 40001, "hasta": 50000, "comision": 775 },
+            { "desde": 50001, "hasta": 75000, "comision": 879 },
+            { "desde": 75001, "hasta": 100000, "comision": 908 },
+            { "desde": 100001, "hasta": 150000, "comision": 1134 },
+            { "desde": 150001, "hasta": 200000, "comision": 1590 },
+            { "desde": 200001, "hasta": 300000, "comision": 2035 },
+            { "desde": 300001, "hasta": 500000, "comision": 2960 },
+            { "desde": 500001, "hasta": 750000, "comision": 4258 },
+            { "desde": 750001, "hasta": 1000000, "comision": 5702 },
+            { "desde": 1000001, "hasta": 1250000, "comision": 7250 },
+            { "desde": 1250001, "hasta": null, "comision": 8500 }
+          ]
+        },
+        "CLASICA TE3 UNICA": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 3000, "comision": 306 },
+            { "desde": 3001, "hasta": 5000, "comision": 341 },
+            { "desde": 5001, "hasta": 10000, "comision": 445 },
+            { "desde": 10001, "hasta": 20000, "comision": 465 },
+            { "desde": 20001, "hasta": 30000, "comision": 612 },
+            { "desde": 30001, "hasta": 40000, "comision": 709 },
+            { "desde": 40001, "hasta": 50000, "comision": 871 },
+            { "desde": 50001, "hasta": 75000, "comision": 996 },
+            { "desde": 75001, "hasta": 100000, "comision": 1036 },
+            { "desde": 100001, "hasta": 150000, "comision": 1305 },
+            { "desde": 150001, "hasta": 200000, "comision": 1843 },
+            { "desde": 200001, "hasta": 300000, "comision": 2376 },
+            { "desde": 300001, "hasta": 500000, "comision": 3484 },
+            { "desde": 500001, "hasta": 750000, "comision": 5043 },
+            { "desde": 750001, "hasta": 1000000, "comision": 6777 },
+            { "desde": 1000001, "hasta": 1250000, "comision": 8500 },
+            { "desde": 1250001, "hasta": null, "comision": 10000 }
+          ]
+        },
+        "CLASICA TE4 UNICA": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 3000, "comision": 400 },
+            { "desde": 3001, "hasta": 5000, "comision": 425 },
+            { "desde": 5001, "hasta": 10000, "comision": 600 },
+            { "desde": 10001, "hasta": 20000, "comision": 700 },
+            { "desde": 20001, "hasta": 30000, "comision": 850 },
+            { "desde": 30001, "hasta": 40000, "comision": 1000 },
+            { "desde": 40001, "hasta": 50000, "comision": 1250 },
+            { "desde": 50001, "hasta": 75000, "comision": 1450 },
+            { "desde": 75001, "hasta": 100000, "comision": 1800 },
+            { "desde": 100001, "hasta": 150000, "comision": 2200 },
+            { "desde": 150001, "hasta": 200000, "comision": 2800 },
+            { "desde": 200001, "hasta": 300000, "comision": 3650 },
+            { "desde": 300001, "hasta": 500000, "comision": 5250 },
+            { "desde": 500001, "hasta": 750000, "comision": 7200 },
+            { "desde": 750001, "hasta": 1000000, "comision": 8800 },
+            { "desde": 1000001, "hasta": 1250000, "comision": 13000 },
+            { "desde": 1250001, "hasta": null, "comision": 15000 }
+          ]
+        },
+        "CLASICA TE5 UNICA": {
+          "tipo": "variable",
+          "bloques": [
+            { "desde": 0, "hasta": 3000, "comision": 425 },
+            { "desde": 3001, "hasta": 5000, "comision": 450 },
+            { "desde": 5001, "hasta": 10000, "comision": 650 },
+            { "desde": 10001, "hasta": 20000, "comision": 750 },
+            { "desde": 20001, "hasta": 30000, "comision": 900 },
+            { "desde": 30001, "hasta": 40000, "comision": 1050 },
+            { "desde": 40001, "hasta": 50000, "comision": 1300 },
+            { "desde": 50001, "hasta": 75000, "comision": 1500 },
+            { "desde": 75001, "hasta": 100000, "comision": 2250 },
+            { "desde": 100001, "hasta": 150000, "comision": 2700 },
+            { "desde": 150001, "hasta": 200000, "comision": 3350 },
+            { "desde": 200001, "hasta": 300000, "comision": 4000 },
+            { "desde": 300001, "hasta": 500000, "comision": 6250 },
+            { "desde": 500001, "hasta": 750000, "comision": 8500 },
+            { "desde": 750001, "hasta": 1000000, "comision": 10500 },
+            { "desde": 1000001, "hasta": 1250000, "comision": 12500 },
+            { "desde": 1250001, "hasta": null, "comision": 17500 }
+          ]
+        }
+      }
+    }
+  },
   "NATURGY": {
     "tipo": "variable",
     "tarifas": {
@@ -15879,6 +17744,537 @@
         "Tarifa Por Uso RL3": {
           "tipo": "fija",
           "comision": 95
+        }
+      }
+    }
+  },
+  "ELEIA": {
+    "tipo": "variable",
+    "tarifas": {
+      "2.0TD": {
+        "TDE PLUS": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 134.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 253.0 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 382.0 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 546.0 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 662.0 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 926.0 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 1075.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 1274.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 1775.0 },
+            { "desde": 100000.001, "hasta": null, "comision": 2667.0 }
+          ]
+        },
+        "TDE0": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 121.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 206.0 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 300.0 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 426.0 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 503.0 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 694.0 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 795.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 924.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 1250.0 },
+            { "desde": 100000.001, "hasta": null, "comision": 1827.0 }
+          ]
+        },
+        "TDE1": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 103.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 172.0 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 249.0 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 352.0 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 414.0 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 568.0 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 649.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 750.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 1006.0 },
+            { "desde": 100000.001, "hasta": null, "comision": 1460.0 }
+          ]
+        },
+        "TDE2": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 76.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 123.0 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 176.0 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 248.0 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 288.0 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 393.0 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 446.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 511.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 676.0 },
+            { "desde": 100000.001, "hasta": null, "comision": 966.0 }
+          ]
+        },
+        "TDE3": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 39.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 64.0 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 92.0 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 130.0 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 152.0 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 208.0 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 237.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 273.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 364.0 },
+            { "desde": 100000.001, "hasta": null, "comision": 525.0 }
+          ]
+        },
+        "TEE0": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 24.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 85.0 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 147.0 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 216.0 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 285.0 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 419.0 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 504.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 630.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 945.0 },
+            { "desde": 100000.001, "hasta": null, "comision": 1512.0 }
+          ]
+        },
+        "TEE1": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 19.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 67.0 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 115.0 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 169.0 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 223.0 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 328.0 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 395.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 494.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 740.0 },
+            { "desde": 100000.001, "hasta": null, "comision": 1184.0 }
+          ]
+        },
+        "TEE2": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 12.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 43.0 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 74.0 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 108.0 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 143.0 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 209.0 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 252.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 315.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 473.0 },
+            { "desde": 100000.001, "hasta": null, "comision": 756.0 }
+          ]
+        },
+        "TEE3": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 7.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 24.0 },
+            { "desde": 10000.001, "hasta": 15000, "comision": 41.0 },
+            { "desde": 15000.001, "hasta": 20000, "comision": 60.0 },
+            { "desde": 20000.001, "hasta": 30000, "comision": 79.0 },
+            { "desde": 30000.001, "hasta": 40000, "comision": 116.0 },
+            { "desde": 40000.001, "hasta": 50000, "comision": 140.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 175.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 263.0 },
+            { "desde": 100000.001, "hasta": null, "comision": 420.0 }
+          ]
+        },
+        "BOE0": {
+          "tipo": "fija",
+          "comision": 130.0
+        },
+        "BOE1": {
+          "tipo": "fija",
+          "comision": 100.0
+        },
+        "BOE2": {
+          "tipo": "fija",
+          "comision": 62.0
+        },
+        "BOE3": {
+          "tipo": "fija",
+          "comision": 30.0
+        }
+      },
+      "3.0TD": {
+        "TDE PLUS": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 317.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 456.0 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 617.0 },
+            { "desde": 20000.001, "hasta": 35000, "comision": 879.0 },
+            { "desde": 35000.001, "hasta": 50000, "comision": 1176.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 1602.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 2029.0 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 2798.0 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 4004.0 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 4681.0 },
+            { "desde": 300000.001, "hasta": 500000, "comision": 6834.0 },
+            { "desde": 500000.001, "hasta": 750000, "comision": 9538.0 },
+            { "desde": 750000.001, "hasta": 1300000, "comision": 13038.0 },
+            { "desde": 1300000.001, "hasta": 2500000, "comision": 21463.0 }
+          ]
+        },
+        "TDE0": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 266.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 365.0 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 478.0 },
+            { "desde": 20000.001, "hasta": 35000, "comision": 657.0 },
+            { "desde": 35000.001, "hasta": 50000, "comision": 859.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 1153.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 1447.0 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 1985.0 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 2834.0 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 3257.0 },
+            { "desde": 300000.001, "hasta": 500000, "comision": 4631.0 },
+            { "desde": 500000.001, "hasta": 750000, "comision": 6376.0 },
+            { "desde": 750000.001, "hasta": 1300000, "comision": 8476.0 },
+            { "desde": 1300000.001, "hasta": 2500000, "comision": 13717.0 }
+          ]
+        },
+        "TDE1": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 202.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 278.0 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 366.0 },
+            { "desde": 20000.001, "hasta": 35000, "comision": 504.0 },
+            { "desde": 35000.001, "hasta": 50000, "comision": 660.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 887.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 1114.0 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 1529.0 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 2184.0 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 2514.0 },
+            { "desde": 300000.001, "hasta": 500000, "comision": 3583.0 },
+            { "desde": 500000.001, "hasta": 750000, "comision": 4940.0 },
+            { "desde": 750000.001, "hasta": 1300000, "comision": 6585.0 },
+            { "desde": 1300000.001, "hasta": 2500000, "comision": 10675.0 }
+          ]
+        },
+        "TDE2": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 105.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 156.0 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 215.0 },
+            { "desde": 20000.001, "hasta": 35000, "comision": 314.0 },
+            { "desde": 35000.001, "hasta": 50000, "comision": 426.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 585.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 745.0 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 1030.0 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 1476.0 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 1742.0 },
+            { "desde": 300000.001, "hasta": 500000, "comision": 2579.0 },
+            { "desde": 500000.001, "hasta": 750000, "comision": 3625.0 },
+            { "desde": 750000.001, "hasta": 1300000, "comision": 5025.0 },
+            { "desde": 1300000.001, "hasta": 2500000, "comision": 8341.0 }
+          ]
+        },
+        "TDE3": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 78.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 109.0 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 144.0 },
+            { "desde": 20000.001, "hasta": 35000, "comision": 201.0 },
+            { "desde": 35000.001, "hasta": 50000, "comision": 265.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 358.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 450.0 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 619.0 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 885.0 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 1023.0 },
+            { "desde": 300000.001, "hasta": 500000, "comision": 1470.0 },
+            { "desde": 500000.001, "hasta": 750000, "comision": 2035.0 },
+            { "desde": 750000.001, "hasta": 1300000, "comision": 2735.0 },
+            { "desde": 1300000.001, "hasta": 2500000, "comision": 4456.0 }
+          ]
+        },
+        "TEE0": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 14.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 62.0 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 117.0 },
+            { "desde": 20000.001, "hasta": 35000, "comision": 225.0 },
+            { "desde": 35000.001, "hasta": 50000, "comision": 348.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 512.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 682.0 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 964.0 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 1394.0 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 1762.0 },
+            { "desde": 300000.001, "hasta": 500000, "comision": 2863.0 },
+            { "desde": 500000.001, "hasta": 750000, "comision": 4200.0 },
+            { "desde": 750000.001, "hasta": 1300000, "comision": 6300.0 },
+            { "desde": 1300000.001, "hasta": 2500000, "comision": 10920.0 }
+          ]
+        },
+        "TEE1": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 11.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 49.0 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 92.0 },
+            { "desde": 20000.001, "hasta": 35000, "comision": 176.0 },
+            { "desde": 35000.001, "hasta": 50000, "comision": 272.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 401.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 535.0 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 755.0 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 1092.0 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 1380.0 },
+            { "desde": 300000.001, "hasta": 500000, "comision": 2243.0 },
+            { "desde": 500000.001, "hasta": 750000, "comision": 3290.0 },
+            { "desde": 750000.001, "hasta": 1300000, "comision": 4935.0 },
+            { "desde": 1300000.001, "hasta": 2500000, "comision": 8554.0 }
+          ]
+        },
+        "TEE2": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 9.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 41.0 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 78.0 },
+            { "desde": 20000.001, "hasta": 35000, "comision": 150.0 },
+            { "desde": 35000.001, "hasta": 50000, "comision": 232.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 341.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 455.0 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 643.0 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 929.0 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 1174.0 },
+            { "desde": 300000.001, "hasta": 500000, "comision": 1909.0 },
+            { "desde": 500000.001, "hasta": 750000, "comision": 2800.0 },
+            { "desde": 750000.001, "hasta": 1300000, "comision": 4200.0 },
+            { "desde": 1300000.001, "hasta": 2500000, "comision": 7280.0 }
+          ]
+        },
+        "TEE3": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 5.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 21.0 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 39.0 },
+            { "desde": 20000.001, "hasta": 35000, "comision": 75.0 },
+            { "desde": 35000.001, "hasta": 50000, "comision": 116.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 171.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 227.0 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 321.0 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 465.0 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 587.0 },
+            { "desde": 300000.001, "hasta": 500000, "comision": 954.0 },
+            { "desde": 500000.001, "hasta": 750000, "comision": 1400.0 },
+            { "desde": 750000.001, "hasta": 1300000, "comision": 2100.0 },
+            { "desde": 1300000.001, "hasta": 2500000, "comision": 3640.0 }
+          ]
+        }
+      },
+      "6.1TD": {
+        "TDE PLUS": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 187.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 291.0 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 470.0 },
+            { "desde": 20000.001, "hasta": 35000, "comision": 804.0 },
+            { "desde": 35000.001, "hasta": 50000, "comision": 1015.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 1833.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 2415.0 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 3217.0 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 4053.0 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 5470.0 },
+            { "desde": 300000.001, "hasta": 500000, "comision": 8577.0 },
+            { "desde": 500000.001, "hasta": 750000, "comision": 11928.0 },
+            { "desde": 750000.001, "hasta": 1300000, "comision": 14471.0 },
+            { "desde": 1300000.001, "hasta": 2500000, "comision": 22864.0 }
+          ]
+        },
+        "TDE0": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 184.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 261.0 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 400.0 },
+            { "desde": 20000.001, "hasta": 35000, "comision": 690.0 },
+            { "desde": 35000.001, "hasta": 50000, "comision": 845.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 1574.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 2030.0 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 2713.0 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 3329.0 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 4497.0 },
+            { "desde": 300000.001, "hasta": 500000, "comision": 7014.0 },
+            { "desde": 500000.001, "hasta": 750000, "comision": 9451.0 },
+            { "desde": 750000.001, "hasta": 1300000, "comision": 11300.0 },
+            { "desde": 1300000.001, "hasta": 2500000, "comision": 17404.0 }
+          ]
+        },
+        "TDE1": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 124.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 186.0 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 294.0 },
+            { "desde": 20000.001, "hasta": 35000, "comision": 504.0 },
+            { "desde": 35000.001, "hasta": 50000, "comision": 629.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 1150.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 1503.0 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 2005.0 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 2501.0 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 3377.0 },
+            { "desde": 300000.001, "hasta": 500000, "comision": 5284.0 },
+            { "desde": 500000.001, "hasta": 750000, "comision": 7264.0 },
+            { "desde": 750000.001, "hasta": 1300000, "comision": 8767.0 },
+            { "desde": 1300000.001, "hasta": 2500000, "comision": 13726.0 }
+          ]
+        },
+        "TDE2": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 84.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 136.0 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 223.0 },
+            { "desde": 20000.001, "hasta": 35000, "comision": 381.0 },
+            { "desde": 35000.001, "hasta": 50000, "comision": 486.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 867.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 1152.0 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 1532.0 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 1949.0 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 2629.0 },
+            { "desde": 300000.001, "hasta": 500000, "comision": 4131.0 },
+            { "desde": 500000.001, "hasta": 750000, "comision": 5806.0 },
+            { "desde": 750000.001, "hasta": 1300000, "comision": 7078.0 },
+            { "desde": 1300000.001, "hasta": 2500000, "comision": 11274.0 }
+          ]
+        },
+        "TDE3": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 43.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 75.0 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 129.0 },
+            { "desde": 20000.001, "hasta": 35000, "comision": 219.0 },
+            { "desde": 35000.001, "hasta": 50000, "comision": 285.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 498.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 672.0 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 892.0 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 1155.0 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 1558.0 },
+            { "desde": 300000.001, "hasta": 500000, "comision": 2456.0 },
+            { "desde": 500000.001, "hasta": 750000, "comision": 3522.0 },
+            { "desde": 750000.001, "hasta": 1300000, "comision": 4332.0 },
+            { "desde": 1300000.001, "hasta": 2500000, "comision": 7002.0 }
+          ]
+        },
+        "TEE0": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 8.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 80.0 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 187.0 },
+            { "desde": 20000.001, "hasta": 35000, "comision": 305.0 },
+            { "desde": 35000.001, "hasta": 50000, "comision": 453.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 689.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 1025.0 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 1343.0 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 1930.0 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 2595.0 },
+            { "desde": 300000.001, "hasta": 500000, "comision": 4169.0 },
+            { "desde": 500000.001, "hasta": 750000, "comision": 6606.0 },
+            { "desde": 750000.001, "hasta": 1300000, "comision": 8456.0 },
+            { "desde": 1300000.001, "hasta": 2500000, "comision": 14560.0 }
+          ]
+        },
+        "TEE1": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 6.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 65.0 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 152.0 },
+            { "desde": 20000.001, "hasta": 35000, "comision": 248.0 },
+            { "desde": 35000.001, "hasta": 50000, "comision": 368.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 560.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 833.0 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 1091.0 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 1569.0 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 2108.0 },
+            { "desde": 300000.001, "hasta": 500000, "comision": 3388.0 },
+            { "desde": 500000.001, "hasta": 750000, "comision": 5368.0 },
+            { "desde": 750000.001, "hasta": 1300000, "comision": 6871.0 },
+            { "desde": 1300000.001, "hasta": 2500000, "comision": 11830.0 }
+          ]
+        },
+        "TEE2": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 5.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 55.0 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 128.0 },
+            { "desde": 20000.001, "hasta": 35000, "comision": 210.0 },
+            { "desde": 35000.001, "hasta": 50000, "comision": 312.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 474.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 705.0 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 923.0 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 1327.0 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 1784.0 },
+            { "desde": 300000.001, "hasta": 500000, "comision": 2866.0 },
+            { "desde": 500000.001, "hasta": 750000, "comision": 4542.0 },
+            { "desde": 750000.001, "hasta": 1300000, "comision": 5814.0 },
+            { "desde": 1300000.001, "hasta": 2500000, "comision": 10010.0 }
+          ]
+        },
+        "TEE3": {
+          "tipo": "variable",
+          "criterio": "consumo",
+          "bloques": [
+            { "desde": 0, "hasta": 5000, "comision": 3.0 },
+            { "desde": 5000.001, "hasta": 10000, "comision": 35.0 },
+            { "desde": 10000.001, "hasta": 20000, "comision": 82.0 },
+            { "desde": 20000.001, "hasta": 35000, "comision": 133.0 },
+            { "desde": 35000.001, "hasta": 50000, "comision": 198.0 },
+            { "desde": 50000.001, "hasta": 75000, "comision": 302.0 },
+            { "desde": 75000.001, "hasta": 100000, "comision": 449.0 },
+            { "desde": 100000.001, "hasta": 150000, "comision": 588.0 },
+            { "desde": 150000.001, "hasta": 200000, "comision": 845.0 },
+            { "desde": 200000.001, "hasta": 300000, "comision": 1135.0 },
+            { "desde": 300000.001, "hasta": 500000, "comision": 1824.0 },
+            { "desde": 500000.001, "hasta": 750000, "comision": 2890.0 },
+            { "desde": 750000.001, "hasta": 1300000, "comision": 3700.0 },
+            { "desde": 1300000.001, "hasta": 2500000, "comision": 6370.0 }
+          ]
         }
       }
     }

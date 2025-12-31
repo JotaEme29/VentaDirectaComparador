@@ -1,14 +1,14 @@
 'use client';
 
-import { useState } from 'react';
-import { Sparkles, Upload, Check, Zap, Phone, Mail } from 'lucide-react';
-import { FormData, ResultadoTarifa, Region, TariffType } from '@core/tipos';
-import { calcularComparativa } from '@core/calculoTarifas';
+import React, { useState, useEffect } from 'react';
+import { Sparkles, ArrowRight, ShieldCheck, Zap, HandCoins, Laptop, Users, Building2, ChevronRight, Mail, Search, MousePointer2, CheckCircle2 } from 'lucide-react';
+import { FormData, ResultadoTarifa } from '../core/tipos';
+import { ComparisonForm } from '../components/shared/ComparisonForm';
+import { ResultCard } from '../components/client/ResultCard';
+import { Button, Badge, Card } from '../components/ui';
+import { PdfExportButton } from '../components/shared/PdfExportButton';
 
-const REGIONES: Region[] = ['PENINSULA', 'BALEARES', 'CANARIAS', 'CEUTA_MELILLA'];
-const TARIFAS_LUZ: TariffType[] = ['2.0TD', '3.0TD', '6.1TD'];
-
-const formInicial: FormData = {
+const initialForm: FormData = {
     energyType: 'electricidad',
     tariffType: '2.0TD',
     region: 'PENINSULA',
@@ -19,7 +19,7 @@ const formInicial: FormData = {
     billingDays: 30,
     currentBill: 0,
     cae: 0,
-    equipmentRental: 0,
+    equipmentRental: 0.80,
     otherCosts: 0,
     discountEnergy: 0,
     discountPower: 0,
@@ -40,812 +40,369 @@ const formInicial: FormData = {
     potenciaP3: 0,
     potenciaP4: 0,
     potenciaP5: 0,
-    potenciaP6: 0
+    potenciaP6: 0,
+    invoiceFile: null
 };
 
-function formatPeriodos(map?: Record<string, number>): string {
-    if (!map) return '-';
-    const entries = Object.entries(map).filter(([, v]) => (v ?? 0) > 0);
-    if (!entries.length) return '-';
-    return entries
-        .map(([p, v]) => `${p} ${v.toFixed(3)} €`)
-        .join(' · ');
-}
-
-export default function Page() {
-    const [form, setForm] = useState<FormData>(formInicial);
+export default function ClientPage() {
     const [resultados, setResultados] = useState<ResultadoTarifa[] | null>(null);
     const [loading, setLoading] = useState(false);
-    const [fileName, setFileName] = useState<string | null>(null);
-    const [iaStatus, setIaStatus] = useState<string>('');
+    const [view, setView] = useState<'hub' | 'form' | 'results'>('hub');
+    const [formDataForPdf, setFormDataForPdf] = useState<FormData>(initialForm);
+    const [selectedResultIndex, setSelectedResultIndex] = useState(0);
+    const [leadModalOpen, setLeadModalOpen] = useState(false);
+    const [leadEmail, setLeadEmail] = useState('');
+    const [leadPhone, setLeadPhone] = useState('');
+    const [leadSending, setLeadSending] = useState(false);
+    const [leadError, setLeadError] = useState('');
+    const [leadSuccess, setLeadSuccess] = useState(false);
+    const formatMoney = (val: number, decimals = 2) =>
+        (val ?? 0).toLocaleString('es-ES', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
 
-    const [selectedIdx, setSelectedIdx] = useState<number>(0);
+    const getSupplierLogo = (supplier: string) => {
+        const s = supplier.toLowerCase();
+        if (s.includes('endesa')) return '/logos/endesa.png';
+        if (s.includes('greening')) return '/logos/greening.png';
+        if (s.includes('ignis')) return '/logos/ignis.png';
+        if (s.includes('localuz')) return '/logos/localuz.png';
+        if (s.includes('iberdrola')) return '/logos/iberdrola.png';
+        if (s.includes('naturgy')) return '/logos/naturgy.png';
+        if (s.includes('polaris')) return '/logos/polaris.png';
+        if (s.includes('logos')) return '/logos.png';
+        if (s.includes('total')) return '/total.png';
+        if (s.includes('acciona')) return '/acciona.png';
+        if (s.includes('repsol')) return '/logos/repsol.png';
+        if (s.includes('eleia')) return '/logos/eleia.png';
+        return null;
+    };
 
-    function update<K extends keyof FormData>(key: K, value: FormData[K]) {
-        setForm(prev => ({ ...prev, [key]: value }));
-    }
-
-    async function handleSubmit(e: React.FormEvent) {
-        e.preventDefault();
-
-        // no calcular si no hay consumo
-        const consumoTotal =
-            form.consumptionP1 +
-            form.consumptionP2 +
-            form.consumptionP3 +
-            form.consumptionP4 +
-            form.consumptionP5 +
-            form.consumptionP6;
-        if (consumoTotal <= 0) {
-            alert('Introduce al menos algún kWh de consumo en los periodos.');
-            return;
-        }
-
+    const handleCompare = async (data: FormData) => {
+        setFormDataForPdf(data);
         setLoading(true);
         try {
-            // si no hay CAE, lo aproximamos a partir del consumo actual
-            const consumoMensual = consumoTotal;
-            const caeAprox =
-                form.billingDays && form.billingDays > 0
-                    ? (consumoMensual * 365) / form.billingDays
-                    : consumoMensual * 12;
-            const formConCae = { ...form, cae: form.cae > 0 ? form.cae : Math.round(caeAprox) };
-            setForm(formConCae);
-            const res = calcularComparativa(formConCae, null, { limit: 20 });
-            // Sort by Score (Equilibrium) as requested for Client Area
-            res.sort((a, b) => (b.score || 0) - (a.score || 0));
+            const resp = await fetch('/api/calcular', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ form: data, limit: 20 })
+            });
+            const payload = await resp.json().catch(() => ({}));
+            if (!resp.ok || !payload?.ok) throw new Error(payload?.error || 'No se pudo calcular la comparativa');
 
+            const res: ResultadoTarifa[] = (payload.resultados || []).sort((a: ResultadoTarifa, b: ResultadoTarifa) => (b.savings || 0) - (a.savings || 0));
             setResultados(res);
-            setSelectedIdx(0);
+            setSelectedResultIndex(0);
+            setLeadSuccess(false);
+            setView('results');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } catch (err: any) {
+            console.error(err);
+            setLeadError(err?.message || 'Error calculando la comparativa');
+            setView('form');
         } finally {
             setLoading(false);
         }
-    }
+    };
 
-    async function handleInvoiceUpload(e: React.ChangeEvent<HTMLInputElement>) {
-        const file = e.target.files?.[0];
-        if (!file) return;
-        setFileName(file.name);
-        setIaStatus('Leyendo factura con IA…');
+    const handleLeadRequest = (res: ResultadoTarifa) => {
+        const idx = resultados?.findIndex(r => r === res) ?? 0;
+        setSelectedResultIndex(idx >= 0 ? idx : 0);
+        setLeadModalOpen(true);
+        setLeadSuccess(false);
+        setLeadError('');
+    };
 
-        // TODO: sustituir por llamada real a tu endpoint de IA
-        setTimeout(() => {
-            // ejemplo: solo rellenamos algunos campos base
-            setForm(prev => ({
-                ...prev,
-                billingDays: prev.billingDays || 30,
-                currentBill: prev.currentBill || 80,
-                // estos valores deben venir de la IA en tu integración real:
-                consumptionP1: prev.consumptionP1 || 100,
-                consumptionP2: prev.consumptionP2 || 80,
-                consumptionP3: prev.consumptionP3 || 60,
-                potenciaP1: prev.potenciaP1 || 3.45,
-                potenciaP2: prev.potenciaP2 || 3.45
-            }));
-            setIaStatus(
-                'Factura leída. Hemos rellenado algunos campos, revisa los datos antes de comparar.'
-            );
-        }, 800);
-    }
+    useEffect(() => {
+        if (leadSuccess) {
+            const t = setTimeout(() => setLeadSuccess(false), 6000);
+            return () => clearTimeout(t);
+        }
+    }, [leadSuccess]);
 
-    const isTwoTd = form.tariffType === '2.0TD';
-    const periodosConsumo = isTwoTd ? ['P1', 'P2', 'P3'] : ['P1', 'P2', 'P3', 'P4', 'P5', 'P6'];
-    const periodosPotencia = isTwoTd ? ['P1', 'P2'] : ['P1', 'P2', 'P3', 'P4', 'P5', 'P6'];
+    const submitLead = async () => {
+        if (!resultados) return;
+        const oferta = resultados[selectedResultIndex];
+        setLeadSending(true);
+        setLeadError('');
+        try {
+            const payload = {
+                email: leadEmail,
+                phone: leadPhone,
+                supplier: oferta.supplier,
+                productName: oferta.productName,
+                tariffType: oferta.tariffType,
+                savings: oferta.annualSavings,
+                clientName: formDataForPdf.clientName,
+                address: formDataForPdf.address,
+                cups: formDataForPdf.cups,
+                region: formDataForPdf.region,
+                energyType: formDataForPdf.energyType,
+                invoiceFile: formDataForPdf.invoiceFile
+            };
+            const resp = await fetch('/api/leads', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            const data = await resp.json().catch(() => ({}));
+            if (!resp.ok || !data?.ok) throw new Error(data?.error || 'No se pudo enviar la solicitud');
+            setLeadSuccess(true);
+            setLeadModalOpen(false);
+            setLeadEmail('');
+            setLeadPhone('');
+        } catch (err: any) {
+            setLeadError(err?.message || 'Error enviando la solicitud');
+        } finally {
+            setLeadSending(false);
+        }
+    };
 
-    // Helper para obtener el resultado seleccionado con seguridad
-    const selectedResult = resultados ? resultados[selectedIdx] || resultados[0] : null;
+    const selectedResult = resultados?.[selectedResultIndex];
 
     return (
-        <div style={{ minHeight: '100vh', background: '#f8fafc', paddingBottom: 64 }}>
-            <style jsx global>{`
-                * { box-sizing: border-box; }
-                body { overflow-x: hidden; }
-                @media (min-width: 1024px) {
-                    .sticky-form {
-                        position: sticky;
-                        top: 88px;
-                        max-height: calc(100vh - 120px);
-                        overflow-y: auto;
-                        scrollbar-width: thin;
-                    }
-                }
-            `}</style>
-            <header
-                style={{
-                    background: 'white',
-                    borderBottom: '1px solid #e2e8f0',
-                    padding: '16px 32px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    fontFamily: 'system-ui, -apple-system, sans-serif',
-                    position: 'sticky',
-                    top: 0,
-                    zIndex: 50
-                }}
-            >
-                <div style={{ fontWeight: 700, fontSize: 18, color: '#0f172a' }}>
-                    Soluciones Vivivan <span style={{ color: '#cbd5e1', margin: '0 8px' }}>/</span>{' '}
-                    <span style={{ color: '#3b82f6' }}>Comparador</span>
+        <div className="min-h-screen bg-[#f8fafc] text-slate-900 selection:bg-blue-100 flex flex-col">
+            {/* Soft Ambient Background */}
+            <div className="fixed inset-0 overflow-hidden pointer-events-none" />
+
+            {/* Header */}
+            <header className="relative z-50 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full">
+                <div className="flex items-center gap-3 group cursor-pointer" onClick={() => setView('hub')}>
+                    <img src="/logo.png" alt="Vivivan Logo" className="h-10 object-contain brightness-100 transition-transform hover:scale-105" />
+                    <div className="hidden sm:block">
+                        <span className="text-xl font-black tracking-tighter block leading-none text-slate-900 uppercase">Soluciones Vivivan</span>
+                        <span className="text-[10px] font-bold tracking-[0.2em] text-blue-600 uppercase">Inteligencia Energética</span>
+                    </div>
+                </div>
+
+                <div className="hidden md:flex items-center gap-8 text-[11px] font-bold uppercase tracking-widest text-slate-500">
+                    <a href="/contacto" className="flex items-center gap-2 hover:text-blue-600 transition-colors">
+                        <Mail size={14} /> Contacto
+                    </a>
                 </div>
             </header>
 
-            <main
-                style={{
-                    // FIX: quitamos width: 100% que sumaba padding y causaba scroll
-                    // Al ser block, ocupa el 100% disponible por defecto
-                    maxWidth: 1600,
-                    margin: '0 auto',
-                    width: '100%',
-                    padding: '24px 32px',
-                    fontFamily: 'system-ui, -apple-system, sans-serif',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: 32
-                }}
-            >
-                {/* HERO */}
-                <section
-                    style={{
-                        textAlign: 'center',
-                        padding: '20px 0'
-                    }}
-                >
-                    <h1
-                        style={{
-                            fontSize: 36,
-                            fontWeight: 800,
-                            letterSpacing: '-0.02em',
-                            color: '#1e293b',
-                            marginBottom: 12
-                        }}
-                    >
-                        Analiza tu factura de luz en segundos
-                    </h1>
-                    <p style={{ color: '#64748b', maxWidth: 640, margin: '0 auto', fontSize: 16 }}>
-                        Sube tu factura o rellena los datos por periodos y te mostraremos las mejores tarifas
-                        según tu consumo real, <strong style={{ color: '#0f172a' }}>ordenadas por recomendación</strong>.
-                    </p>
-                </section>
+            <main className="relative z-10 flex-1 flex flex-col justify-center items-center px-6 transition-all duration-500 py-12">
 
-                <div
-                    style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-                        gap: 32,
-                        alignItems: 'start'
-                    }}
-                >
-                    {/* FORMULARIO */}
-                    <div
-                        className="sticky-form"
-                        style={{
-                            background: 'white',
-                            borderRadius: 24,
-                            boxShadow: '0 4px 20px rgba(0,0,0,0.03)',
-                            padding: 32,
-                            border: '1px solid #f1f5f9'
-                        }}
-                    >
-                        {/* Bloque IA */}
-                        <div
-                            style={{
-                                borderRadius: 16,
-                                background: 'linear-gradient(to right, #eff6ff, #f8fafc)',
-                                padding: 20,
-                                marginBottom: 24,
-                                border: '1px solid #bfdbfe'
-                            }}
-                        >
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: 10,
-                                    marginBottom: 8
-                                }}
-                            >
-                                <Sparkles size={20} className="text-blue-600" style={{ color: '#2563eb' }} />
-                                <div style={{ fontWeight: 700, color: '#1e40af' }}>Autocompletar con IA</div>
+                {view === 'hub' && (
+                    <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center animate-in fade-in zoom-in duration-700">
+                        <div className="space-y-8 text-center lg:text-left">
+                            <Badge variant="blue">Tecnología de Comparación Superior</Badge>
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-black uppercase tracking-[0.18em]">
+                                Comparativa gratis · Sin costo para ti
                             </div>
-                            <p style={{ fontSize: 13, color: '#475569', marginBottom: 16, lineHeight: 1.5 }}>
-                                Sube un PDF de tu factura reciente. Nuestra IA leerá los periodos de consumo y
-                                potencia por ti.
+                            <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-[1.1] text-slate-900 drop-shadow-sm">
+                                Activa tu <span className="text-blue-600">ahorro</span> hoy
+                            </h1>
+                            <p className="text-xl text-slate-500 font-medium max-w-md mx-auto lg:mx-0 leading-relaxed">
+                                Encuentra en minutos la tarifa que maximiza tu ahorro. Gestión completa y transparente, sin comisiones ocultas.
                             </p>
-                            <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
-                                <label
-                                    style={{
-                                        padding: '10px 18px',
-                                        background: '#2563eb',
-                                        color: 'white',
-                                        borderRadius: 12,
-                                        fontSize: 13,
-                                        fontWeight: 600,
-                                        cursor: 'pointer',
-                                        border: '1px solid #1d4ed8',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: 8,
-                                        transition: 'all 0.2s',
-                                    }}
-                                >
-                                    <span>Subir factura (PDF/Img)</span>
-                                    <input
-                                        type="file"
-                                        accept=".pdf,image/*"
-                                        style={{ display: 'none' }}
-                                        onChange={handleInvoiceUpload}
-                                    />
-                                </label>
-                                <div style={{ fontSize: 13, color: '#64748b' }}>
-                                    {fileName ? (
-                                        <span style={{ color: '#059669', fontWeight: 500, display: 'flex', alignItems: 'center', gap: 4 }}>
-                                            <Check size={16} /> {fileName}
-                                        </span>
-                                    ) : (
-                                        'Máx. 5MB'
-                                    )}
-                                </div>
+                            <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                                <Button size="lg" className="btn-primary px-10 py-7 text-lg shadow-lg shadow-blue-500/20" onClick={() => setView('form')}>
+                                    Comienza tu ahorro <ChevronRight className="ml-2" />
+                                </Button>
                             </div>
-                            {iaStatus && (
-                                <div
-                                    style={{
-                                        marginTop: 12,
-                                        fontSize: 13,
-                                        color: '#0f172a',
-                                        background: 'rgba(255,255,255,0.6)',
-                                        padding: '8px 12px',
-                                        borderRadius: 8
-                                    }}
-                                >
-                                    {iaStatus}
-                                </div>
-                            )}
                         </div>
 
-                        {/* Formulario manual */}
-                        <form
-                            onSubmit={handleSubmit}
-                            style={{ display: 'flex', flexDirection: 'column', gap: 24 }}
-                        >
-                            {/* Zona + Tarifa */}
-                            <div
-                                style={{
-                                    display: 'grid',
-                                    gridTemplateColumns: 'repeat(auto-fit, minmax(140px,1fr))',
-                                    gap: 16
-                                }}
-                            >
-                                <div>
-                                    <label
-                                        style={{ fontSize: 13, fontWeight: 700, color: '#334155', marginBottom: 6, display: 'block' }}
-                                    >
-                                        Zona Geográfica
-                                    </label>
-                                    <select
-                                        value={form.region}
-                                        onChange={e => update('region', e.target.value as Region)}
-                                        style={{
-                                            width: '100%',
-                                            padding: '10px 12px',
-                                            borderRadius: 12,
-                                            border: '1px solid #e2e8f0',
-                                            fontSize: 14,
-                                            background: '#f8fafc',
-                                            color: '#0f172a'
-                                        }}
-                                    >
-                                        {REGIONES.map(r => (
-                                            <option key={r} value={r}>
-                                                {r === 'PENINSULA' && 'Península'}
-                                                {r === 'BALEARES' && 'Baleares'}
-                                                {r === 'CANARIAS' && 'Canarias'}
-                                                {r === 'CEUTA_MELILLA' && 'Ceuta y Melilla'}
-                                            </option>
-                                        ))}
-                                    </select>
-                                </div>
-
-                                <div>
-                                    <label
-                                        style={{ fontSize: 13, fontWeight: 700, color: '#334155', marginBottom: 6, display: 'block' }}
-                                    >
-                                        Tipo de tarifa
-                                    </label>
-                                    <select
-                                        value={form.tariffType}
-                                        onChange={e => update('tariffType', e.target.value as TariffType)}
-                                        style={{
-                                            width: '100%',
-                                            padding: '10px 12px',
-                                            borderRadius: 12,
-                                            border: '1px solid #e2e8f0',
-                                            fontSize: 14,
-                                            background: '#f8fafc',
-                                            color: '#0f172a'
-                                        }}
-                                    >
-                                        {TARIFAS_LUZ.map(t => (
-                                            <option key={t} value={t}>
-                                                {t}
-                                            </option>
-                                        ))}
-                                    </select>
+                        <div className="grid grid-cols-1 gap-6">
+                            <div className="futuristic-card p-8 rounded-[2rem] shadow-xl shadow-blue-500/10 hover:border-blue-200 bg-white/90 backdrop-blur">
+                                <div className="flex items-start gap-6">
+                                    <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600">
+                                        <Search size={28} />
+                                    </div>
+                                    <div className="flex-1 space-y-2">
+                                        <h3 className="text-xl font-bold text-slate-900">Transparencia Total</h3>
+                                        <p className="text-slate-500 text-sm leading-relaxed">Sin comisiones para el cliente. Nuestro objetivo es tu ahorro directo.</p>
+                                    </div>
                                 </div>
                             </div>
 
-                            {/* Potencias */}
-                            <div>
-                                <h3 style={{ fontSize: 14, fontWeight: 700, color: '#1e293b', marginBottom: 8 }}>
-                                    Potencias Contratadas (kW)
-                                </h3>
-                                <div
-                                    style={{
-                                        display: 'grid',
-                                        gridTemplateColumns: `repeat(auto-fill, minmax(80px, 1fr))`,
-                                        gap: 12
-                                    }}
-                                >
-                                    {periodosPotencia.map(p => {
-                                        const key = ('potencia' + p) as keyof FormData;
-                                        return (
-                                            <div key={p}>
-                                                <label
-                                                    style={{
-                                                        fontSize: 11,
-                                                        fontWeight: 600,
-                                                        color: '#64748b',
-                                                        marginBottom: 4,
-                                                        display: 'block',
-                                                        textAlign: 'center'
-                                                    }}
-                                                >
-                                                    {p}
-                                                </label>
-                                                <input
-                                                    type="number"
-                                                    step="0.01"
-                                                    placeholder="0"
-                                                    value={Number(form[key]) === 0 ? '' : Number(form[key])}
-                                                    onChange={e =>
-                                                        update(key, (e.target.value === '' ? 0 : Number(e.target.value)) as any)
-                                                    }
-                                                    style={{
-                                                        width: '100%',
-                                                        padding: '8px',
-                                                        borderRadius: 10,
-                                                        border: '1px solid #cbd5e1',
-                                                        textAlign: 'center',
-                                                        fontSize: 14,
-                                                        fontWeight: 500
-                                                    }}
-                                                />
-                                            </div>
-                                        );
-                                    })}
+                            <div className="futuristic-card p-8 rounded-[2rem] shadow-xl shadow-blue-500/10 hover:border-blue-200 bg-white/90 backdrop-blur">
+                                <div className="flex items-start gap-6">
+                                    <div className="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600">
+                                        <ShieldCheck size={28} />
+                                    </div>
+                                    <div className="flex-1 space-y-2">
+                                        <h3 className="text-xl font-bold text-slate-900">Privacidad Garantizada</h3>
+                                        <p className="text-slate-500 text-sm leading-relaxed">Tus datos encriptados. Cumplimos con los más altos estándares de seguridad.</p>
+                                    </div>
                                 </div>
                             </div>
 
-                            {/* Consumos */}
-                            <div>
-                                <h3 style={{ fontSize: 14, fontWeight: 700, color: '#1e293b', marginBottom: 8 }}>
-                                    Consumo Facturado (kWh)
-                                </h3>
-                                <div
-                                    style={{
-                                        display: 'grid',
-                                        gridTemplateColumns: `repeat(auto-fill, minmax(80px, 1fr))`,
-                                        gap: 12
-                                    }}
-                                >
-                                    {periodosConsumo.map(p => {
-                                        const key = ('consumption' + p) as keyof FormData;
-                                        return (
-                                            <div key={p}>
-                                                <label
-                                                    style={{
-                                                        fontSize: 11,
-                                                        fontWeight: 600,
-                                                        color: '#64748b',
-                                                        marginBottom: 4,
-                                                        display: 'block',
-                                                        textAlign: 'center'
-                                                    }}
-                                                >
-                                                    {p}
-                                                </label>
-                                                <input
-                                                    type="number"
-                                                    step="0.01"
-                                                    placeholder="0"
-                                                    value={Number(form[key]) === 0 ? '' : Number(form[key])}
-                                                    onChange={e =>
-                                                        update(key, (e.target.value === '' ? 0 : Number(e.target.value)) as any)
-                                                    }
-                                                    style={{
-                                                        width: '100%',
-                                                        padding: '8px',
-                                                        borderRadius: 10,
-                                                        border: '1px solid #cbd5e1',
-                                                        textAlign: 'center',
-                                                        fontSize: 14,
-                                                        fontWeight: 500
-                                                    }}
-                                                />
-                                            </div>
-                                        );
-                                    })}
+                            <div className="pt-8 flex flex-col gap-4">
+                                <span className="text-[10px] font-black uppercase tracking-widest text-slate-500">Empresas Colaboradoras</span>
+                                <div className="flex gap-6 items-center flex-wrap opacity-80">
+                                    <img src="/logos/endesa.png" alt="Endesa" className="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
+                                    <img src="/logos/naturgy.png" alt="Naturgy" className="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
+                                    <img src="/logos/repsol.png" alt="Repsol" className="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
+                                    <img src="/logos/acciona.png" alt="Acciona" className="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
+                                    <img src="/logos/iberdrola.png" alt="Iberdrola" className="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
+                                    <img src="/logos/greening.png" alt="Greening" className="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
+                                    <img src="/logos/localuz.png" alt="Localuz" className="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
+                                    <img src="/logos/eleia.png" alt="Eleia" className="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
                                 </div>
                             </div>
-
-                            {/* Facturación */}
-                            <div
-                                style={{
-                                    display: 'grid',
-                                    gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-                                    gap: 16,
-                                    background: '#f8fafc',
-                                    padding: 16,
-                                    borderRadius: 16
-                                }}
-                            >
-                                <div>
-                                    <label style={{ fontSize: 12, fontWeight: 600, color: '#475569', marginBottom: 4, display: 'block' }}>
-                                        Importe Factura (€)
-                                    </label>
-                                    <input
-                                        type="number"
-                                        step="0.01"
-                                        value={form.currentBill === 0 ? '' : form.currentBill}
-                                        onChange={e => {
-                                            const v = e.target.value;
-                                            update('currentBill', v === '' ? 0 : Number(v));
-                                        }}
-                                        style={{
-                                            width: '100%',
-                                            padding: '8px 10px',
-                                            borderRadius: 8,
-                                            border: '1px solid #d1d5db',
-                                            fontSize: 14
-                                        }}
-                                    />
-                                </div>
-                                <div>
-                                    <label style={{ fontSize: 12, fontWeight: 600, color: '#475569', marginBottom: 4, display: 'block' }}>
-                                        Días Facturados
-                                    </label>
-                                    <input
-                                        type="number"
-                                        value={form.billingDays}
-                                        onChange={e => update('billingDays', Number(e.target.value))}
-                                        style={{
-                                            width: '100%',
-                                            padding: '8px 10px',
-                                            borderRadius: 8,
-                                            border: '1px solid #d1d5db',
-                                            fontSize: 14
-                                        }}
-                                    />
-                                </div>
-                                <div>
-                                    <label style={{ fontSize: 12, fontWeight: 600, color: '#475569', marginBottom: 4, display: 'block' }}>
-                                        Alquiler Equipos (€)
-                                    </label>
-                                    <input
-                                        type="number"
-                                        step="0.01"
-                                        value={form.equipmentRental === 0 ? '' : form.equipmentRental}
-                                        onChange={e => {
-                                            const v = e.target.value;
-                                            update('equipmentRental', v === '' ? 0 : Number(v));
-                                        }}
-                                        style={{
-                                            width: '100%',
-                                            padding: '8px 10px',
-                                            borderRadius: 8,
-                                            border: '1px solid #d1d5db',
-                                            fontSize: 14
-                                        }}
-                                    />
-                                </div>
-                            </div>
-
-                            <div>
-                                <button
-                                    type="submit"
-                                    disabled={loading}
-                                    style={{
-                                        width: '100%',
-                                        padding: '16px',
-                                        borderRadius: 16,
-                                        background: 'linear-gradient(to right, #2563eb, #1d4ed8)',
-                                        color: 'white',
-                                        border: 'none',
-                                        fontWeight: 700,
-                                        fontSize: 16,
-                                        cursor: loading ? 'wait' : 'pointer',
-                                        boxShadow: '0 10px 25px -5px rgba(37,99,235,0.4)',
-                                        transition: 'transform 0.1s',
-                                        opacity: loading ? 0.7 : 1
-                                    }}
-                                >
-                                    {loading ? 'Calculando mejores tarifas…' : 'COMPARAR OFERTAS'}
-                                </button>
-                                <p style={{ textAlign: 'center', fontSize: 12, color: '#94a3b8', marginTop: 12 }}>
-                                    Calculamos impuestos, peajes y costes ocultos para darte el precio final real.
-                                </p>
-                            </div>
-                        </form>
+                        </div>
                     </div>
+                )}
 
-                    {/* RESULTADOS O INTRO */}
-                    <div style={{ minWidth: 0 }}>
-                        {!resultados || !selectedResult ? (
-                            <div
-                                style={{
-                                    height: '100%',
-                                    minHeight: 400,
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    textAlign: 'center',
-                                    background: 'white',
-                                    borderRadius: 24,
-                                    padding: 40,
-                                    border: '2px dashed #e2e8f0'
-                                }}
-                            >
-                                <div style={{ marginBottom: 16, color: '#cbd5e1' }}>
-                                    <Zap size={48} strokeWidth={1.5} />
+                {view === 'form' && (
+                    <div className="max-w-6xl w-full animate-in fade-in slide-in-from-bottom-8 duration-700 py-6">
+                        <div className="flex items-center justify-between mb-8">
+                            <button onClick={() => setView('hub')} className="text-slate-400 hover:text-slate-900 flex items-center gap-2 font-bold text-sm transition-colors uppercase tracking-widest">
+                                <ArrowRight className="rotate-180" size={16} /> Volver al Inicio
+                            </button>
+                            <h2 className="text-2xl font-black uppercase tracking-tighter text-slate-900">Estudio de <span className="text-blue-600">Eficiencia</span></h2>
+                        </div>
+                        <div className="bg-white rounded-[2.5rem] shadow-2xl shadow-blue-500/5 border border-slate-100 p-2 overflow-hidden">
+                            <ComparisonForm initialData={initialForm} onSubmit={handleCompare} loading={loading} />
+                        </div>
+                    </div>
+                )}
+
+                {view === 'results' && resultados && (
+                    <div className="max-w-7xl w-full animate-in fade-in slide-in-from-bottom-8 duration-700 py-6">
+                        <div className="sticky top-0 z-30 pb-4 bg-gradient-to-b from-[#f8fafc] via-[#f8fafc] to-[#f8fafc]/70 backdrop-blur-md">
+                            <div className="flex flex-col md:flex-row md:items-start justify-between gap-8">
+                                <div className="space-y-4">
+                                    <button onClick={() => setView('form')} className="text-blue-600 hover:text-blue-700 flex items-center gap-2 font-black text-sm transition-all uppercase tracking-widest">
+                                        <ArrowRight className="rotate-180" size={16} /> Nueva Comparativa
+                                    </button>
+                                    <div className="flex items-center gap-6 flex-wrap">
+                                        <h2 className="text-5xl font-black tracking-tighter leading-none text-slate-900">Tu Plan de <span className="text-blue-600">Ahorro</span></h2>
+                                        <PdfExportButton
+                                            result={resultados[selectedResultIndex] || resultados[0]}
+                                            form={formDataForPdf}
+                                            filename={`Soluciones_Vivivan_${formDataForPdf.clientName || 'Propuesta'}.pdf`}
+                                            variant="outline"
+                                        />
+                                    </div>
                                 </div>
-                                <h3 style={{ fontSize: 20, fontWeight: 700, color: '#0f172a', marginBottom: 8 }}>
-                                    Esperando datos
-                                </h3>
-                                <p style={{ color: '#64748b', maxWidth: 300 }}>
-                                    Rellena el formulario de la izquierda o sube tu factura para ver la comparativa aquí.
-                                </p>
+                        <div className="bg-gradient-to-r from-blue-600 to-indigo-500 px-12 py-8 rounded-3xl flex items-start gap-6 shadow-2xl shadow-blue-600/25 text-white min-w-[320px] md:max-w-[520px] w-full ring-4 ring-blue-500/10">
+                                    <div className="p-4 bg-white/20 rounded-2xl">
+                                        <HandCoins size={36} />
+                                    </div>
+                                    <div className="space-y-1">
+                                        <p className="text-sm font-bold text-blue-100 uppercase tracking-[0.2em]">Ahorro Anual Aproximado</p>
+                                        <p className="text-5xl font-black tabular-nums leading-none">
+                                            {formatMoney(resultados[selectedResultIndex]?.annualSavings ?? resultados[0]?.annualSavings ?? 0, 0)}€
+                                            <span className="text-lg font-medium opacity-80 ml-1">/ año</span>
+                                        </p>
+                                        <p className="text-xs text-blue-50">Incluye impuestos, alquileres y otros costes declarados.</p>
+                                        <p className="text-[11px] text-blue-50/90">Descarga el PDF para ver el desglose completo.</p>
+                                    </div>
+                                </div>
                             </div>
-                        ) : (
-                            <div>
-                                {/* Resumen destacado */}
-                                <div
-                                    style={{
-                                        position: 'sticky',
-                                        top: 88, // dejar espacio para el header
-                                        zIndex: 30,
-                                        background: '#0f172a',
-                                        color: 'white',
-                                        borderRadius: 24,
-                                        padding: '24px 32px',
-                                        marginBottom: 32,
-                                        display: 'flex',
-                                        flexWrap: 'wrap',
-                                        alignItems: 'center',
-                                        justifyContent: 'space-between',
-                                        gap: 24,
-                                        boxShadow: '0 20px 40px -10px rgba(15,23,42,0.3)',
-                                        border: '1px solid #1e293b',
-                                        minHeight: 140, // Avoid jumping when content changes
-                                        transition: 'all 0.3s ease'
-                                    }}
-                                >
-                                    <div style={{ display: 'flex', gap: 32, alignItems: 'center' }}>
-                                        <div>
-                                            <div style={{ textTransform: 'uppercase', fontSize: 12, letterSpacing: '0.05em', opacity: 0.7, marginBottom: 4, fontWeight: 600 }}>
-                                                Ahorro anual estimado
-                                            </div>
-                                            <div style={{ fontSize: 36, fontWeight: 800, color: '#4ade80' }}>
-                                                {selectedResult.annualSavings.toFixed(2)} €
-                                            </div>
+                        </div>
+
+                        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {(() => {
+                                const maxScore = Math.max(...resultados.map(r => r.score || 0), 1);
+                                return resultados.map((r, idx) => (
+                                    <ResultCard
+                                        key={idx}
+                                        result={r}
+                                        formData={formDataForPdf}
+                                        isBest={r.recommended || idx === 0}
+                                        isSelected={idx === selectedResultIndex}
+                                        onSelect={() => setSelectedResultIndex(idx)}
+                                        onRequestLead={handleLeadRequest}
+                                    />
+                                ));
+                            })()}
+                        </div>
+
+                        {leadModalOpen && resultados && (
+                            <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+                                <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 space-y-5">
+                                    <div className="flex items-start gap-4">
+                                        <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 overflow-hidden">
+                                            {selectedResult && getSupplierLogo(selectedResult.supplier) ? (
+                                                <img src={getSupplierLogo(selectedResult.supplier)!} alt={selectedResult.supplier} className="w-full h-full object-contain" />
+                                            ) : (
+                                                <span className="text-lg font-black text-blue-600">{selectedResult?.supplier?.[0]}</span>
+                                            )}
                                         </div>
+                                        <div className="flex-1">
+                                            <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-1">Contratación por email</p>
+                                            <h3 className="text-xl font-black text-slate-900 leading-tight">{selectedResult?.supplier} · {selectedResult?.productName}</h3>
+                                            <p className="text-sm text-slate-500">Ahorro estimado: {selectedResult?.annualSavings ? selectedResult.annualSavings.toFixed(0) : '0'}€ / año.</p>
+                                        </div>
+                                        <Button variant="ghost" size="sm" onClick={() => setLeadModalOpen(false)}>Cerrar</Button>
+                                    </div>
 
-                                        <div style={{ height: 40, width: 1, background: 'rgba(255,255,255,0.1)' }}></div>
-
-                                        <div>
-                                            <div style={{ textTransform: 'uppercase', fontSize: 12, letterSpacing: '0.05em', opacity: 0.7, marginBottom: 4, fontWeight: 600 }}>
-                                                Tu ahorro / factura
-                                            </div>
-                                            <div style={{ fontSize: 24, fontWeight: 700, color: '#86efac' }}>
-                                                {selectedResult.savings.toFixed(2)} €
-                                            </div>
+                                    <div className="space-y-3">
+                                        <div className="space-y-1">
+                                            <label className="text-[11px] font-black uppercase tracking-widest text-slate-500">Correo electrónico</label>
+                                            <input
+                                                type="email"
+                                                value={leadEmail}
+                                                onChange={(e) => setLeadEmail(e.target.value)}
+                                                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none"
+                                                placeholder="cliente@email.com"
+                                            />
+                                        </div>
+                                        <div className="space-y-1">
+                                            <label className="text-[11px] font-black uppercase tracking-widest text-slate-500">Teléfono</label>
+                                            <input
+                                                type="tel"
+                                                value={leadPhone}
+                                                onChange={(e) => setLeadPhone(e.target.value)}
+                                                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none"
+                                                placeholder="+34 600 000 000"
+                                            />
                                         </div>
                                     </div>
 
-                                    <div style={{ textAlign: 'right' }}>
-                                        <div style={{ fontSize: 14, opacity: 0.8, marginBottom: 4 }}>
-                                            Pagarías <strong>{selectedResult.total.toFixed(2)} €</strong> en vez de {form.currentBill.toFixed(2)} €
-                                        </div>
-                                        <div style={{ fontSize: 13, color: '#94a3b8' }}>
-                                            {selectedResult.productName}
-                                        </div>
+                                    {leadError && (
+                                        <div className="text-sm text-red-600 font-bold bg-red-50 border border-red-100 rounded-xl px-4 py-2">{leadError}</div>
+                                    )}
+
+                                    <div className="flex gap-3">
+                                        <Button
+                                            fullWidth
+                                            className="btn-primary h-12 uppercase tracking-widest font-black"
+                                            onClick={submitLead}
+                                            disabled={leadSending || !leadEmail || !leadPhone}
+                                        >
+                                            {leadSending ? 'Enviando...' : 'Enviar por correo'}
+                                        </Button>
                                     </div>
+
+                                    <p className="text-[11px] text-slate-400 leading-relaxed">
+                                        Procesamos tu solicitud por email y te contactamos para cerrar la contratación de esta oferta seleccionada.
+                                    </p>
                                 </div>
+                            </div>
+                        )}
 
-                                <section>
-                                    <h2 style={{ fontSize: 20, fontWeight: 700, color: '#0f172a', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 8 }}>
-                                        Mejores ofertas
-                                        <span style={{ fontSize: 12, background: '#e2e8f0', padding: '2px 8px', borderRadius: 99, color: '#475569', fontWeight: 600 }}>
-                                            {resultados.length}
-                                        </span>
-                                    </h2>
-
-                                    <div
-                                        style={{
-                                            display: 'grid',
-                                            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-                                            gap: 20
-                                        }}
-                                    >
-                                        {resultados.map((r, idx) => {
-                                            const isSelected = idx === selectedIdx;
-                                            const isBest = idx === 0;
-
-                                            // Lógica de borde: Azul fuerte si está seleccionado, azul suave si es mejor opción pero no seleccionada, gris si nada.
-                                            let borderColor = '#e2e8f0';
-                                            if (isSelected) borderColor = '#2563eb';
-                                            else if (isBest) borderColor = '#93c5fd';
-
-                                            return (
-                                                <div
-                                                    key={idx}
-                                                    onClick={() => setSelectedIdx(idx)}
-                                                    style={{
-                                                        background: isSelected ? '#eff6ff' : 'white',
-                                                        borderRadius: 24, // más redondeado
-                                                        border: `2px solid ${borderColor}`,
-                                                        padding: 28, // más grande
-                                                        position: 'relative',
-                                                        transition: 'all 0.2s ease-in-out',
-                                                        cursor: 'pointer',
-                                                        display: 'flex',
-                                                        flexDirection: 'column',
-                                                        justifyContent: 'space-between',
-                                                        transform: isSelected ? 'scale(1.02)' : 'scale(1)',
-                                                        boxShadow: isSelected ? '0 10px 40px -5px rgba(37, 99, 235, 0.3)' : '0 4px 6px -1px rgba(0,0,0,0.05)'
-                                                    }}
-                                                >
-                                                    {isBest && (
-                                                        <div
-                                                            style={{
-                                                                position: 'absolute',
-                                                                top: -12,
-                                                                left: 20,
-                                                                background: '#2563eb',
-                                                                color: 'white',
-                                                                fontSize: 11,
-                                                                fontWeight: 700,
-                                                                padding: '4px 12px',
-                                                                borderRadius: 99,
-                                                                textTransform: 'uppercase',
-                                                                letterSpacing: '0.05em'
-                                                            }}
-                                                        >
-                                                            Mejor opción
-                                                        </div>
-                                                    )}
-
-                                                    <div style={{ marginBottom: 16 }}>
-                                                        <div style={{ fontSize: 16, fontWeight: 800, color: '#0f172a', marginBottom: 2 }}>
-                                                            {r.supplier}
-                                                        </div>
-                                                        <div style={{ fontSize: 13, color: '#64748b' }}>{r.productName}</div>
-                                                    </div>
-
-                                                    <div
-                                                        style={{
-                                                            padding: '16px 0',
-                                                            borderTop: '1px solid ' + (isSelected ? '#bfdbfe' : '#f1f5f9'),
-                                                            borderBottom: '1px solid ' + (isSelected ? '#bfdbfe' : '#f1f5f9'),
-                                                            marginBottom: 16,
-                                                            display: 'flex',
-                                                            alignItems: 'baseline',
-                                                            justifyContent: 'space-between'
-                                                        }}
-                                                    >
-                                                        <div>
-                                                            <div style={{ fontSize: 11, color: '#64748b', textTransform: 'uppercase', fontWeight: 600 }}>Estimado</div>
-                                                            <div style={{ fontSize: 28, fontWeight: 800, color: '#0f172a' }}>{r.total.toFixed(2)} €</div>
-                                                        </div>
-                                                        <div style={{ textAlign: 'right' }}>
-                                                            <div style={{ fontSize: 11, color: '#64748b', textTransform: 'uppercase', fontWeight: 600 }}>Ahorro Factura</div>
-                                                            <div style={{ fontSize: 18, fontWeight: 700, color: '#16a34a' }}>{Math.abs(r.savings).toFixed(2)} €</div>
-                                                            <div style={{ fontSize: 11, color: '#15803d', marginTop: 2, fontWeight: 600 }}>
-                                                                {r.annualSavings.toFixed(0)} € / año
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div style={{ fontSize: 13, color: '#475569', display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
-                                                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                                            <span>Impuesto Eléctrico:</span>
-                                                            <span style={{ fontWeight: 600 }}>{r.electricityTax.toFixed(2)} €</span>
-                                                        </div>
-                                                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                                            <span>Alquiler Equipos:</span>
-                                                            <span style={{ fontWeight: 600 }}>{r.equipmentRental.toFixed(2)} €</span>
-                                                        </div>
-                                                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                                            <span>IVA:</span>
-                                                            <span style={{ fontWeight: 600 }}>{r.vat.toFixed(2)} €</span>
-                                                        </div>
-                                                        <div style={{ height: 1, background: isSelected ? '#bfdbfe' : '#f1f5f9', margin: '4px 0' }}></div>
-                                                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12 }}>
-                                                            <span>Energía:</span>
-                                                            <span style={{ fontWeight: 600 }}>{formatPeriodos(r.preciosEnergia)}</span>
-                                                        </div>
-                                                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12 }}>
-                                                            <span>Potencia:</span>
-                                                            <span style={{ fontWeight: 600 }}>{formatPeriodos(r.preciosPotencia)}</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-                                                        <button
-                                                            onClick={(e) => { e.stopPropagation(); console.log('Contratar', r.supplier); }}
-                                                            style={{
-                                                                background: '#2563eb',
-                                                                color: 'white',
-                                                                border: 'none',
-                                                                borderRadius: 12,
-                                                                padding: '12px',
-                                                                fontWeight: 700,
-                                                                fontSize: 14,
-                                                                cursor: 'pointer',
-                                                                gridColumn: 'span 2'
-                                                            }}
-                                                        >
-                                                            Contratar Online
-                                                        </button>
-                                                        <button
-                                                            onClick={(e) => { e.stopPropagation(); }}
-                                                            style={{
-                                                                background: 'transparent',
-                                                                color: '#334155',
-                                                                border: '1px solid #cbd5e1',
-                                                                borderRadius: 12,
-                                                                padding: '10px',
-                                                                fontWeight: 600,
-                                                                fontSize: 13,
-                                                                cursor: 'pointer',
-                                                                display: 'flex',
-                                                                alignItems: 'center',
-                                                                justifyContent: 'center',
-                                                                gap: 8
-                                                            }}
-                                                        >
-                                                            <Phone size={14} /> Te llamamos
-                                                        </button>
-                                                        <button
-                                                            onClick={(e) => { e.stopPropagation(); }}
-                                                            style={{
-                                                                background: 'transparent',
-                                                                color: '#334155',
-                                                                border: '1px solid #cbd5e1',
-                                                                borderRadius: 12,
-                                                                padding: '10px',
-                                                                fontWeight: 600,
-                                                                fontSize: 13,
-                                                                cursor: 'pointer',
-                                                                display: 'flex',
-                                                                alignItems: 'center',
-                                                                justifyContent: 'center',
-                                                                gap: 8
-                                                            }}
-                                                        >
-                                                            <Mail size={14} />  Por correo
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            );
-                                        })}
-                                    </div>
-                                </section>
+                        {leadSuccess && (
+                            <div className="fixed bottom-6 right-6 z-50 bg-white border border-green-100 shadow-xl shadow-green-500/20 rounded-2xl px-6 py-4 flex items-center gap-3">
+                                <div className="p-2 bg-green-50 text-green-600 rounded-xl">
+                                    <CheckCircle2 size={20} />
+                                </div>
+                                <div>
+                                    <p className="text-sm font-black text-slate-900 leading-tight">Solicitud enviada</p>
+                                    <p className="text-xs text-slate-500">Nuestro equipo te llamará en breve para continuar la contratación.</p>
+                                </div>
+                                <Button variant="ghost" size="sm" onClick={() => setLeadSuccess(false)}>Cerrar</Button>
                             </div>
                         )}
                     </div>
+                )}
+            </main>
+
+            <footer className="relative z-50 px-8 py-10 max-w-7xl mx-auto w-full border-t border-slate-200">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+                    <div className="flex items-center gap-3">
+                        <img src="/logo.png" alt="Vivivan" className="h-6 object-contain grayscale opacity-60" />
+                        <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">© 2025 Soluciones Vivivan S.L.</span>
+                    </div>
+                    <div className="flex gap-8 text-[10px] uppercase font-bold tracking-widest text-slate-400">
+                        <a href="/aviso-legal" className="hover:text-blue-600 transition-colors">Aviso Legal</a>
+                        <a href="/privacidad" className="hover:text-blue-600 transition-colors">Privacidad</a>
+                        <a href="/cookies" className="hover:text-blue-600 transition-colors">Cookies</a>
+                    </div>
                 </div>
-            </main >
-        </div >
+            </footer>
+        </div>
     );
 }
