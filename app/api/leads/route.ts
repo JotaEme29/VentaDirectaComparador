@@ -30,7 +30,9 @@ export async function POST(req: NextRequest) {
             cups,
             region,
             energyType,
-            invoiceFile
+            invoiceFile,
+            identityFile,
+            contactMode
         } = await req.json();
 
         if (!email || !phone) {
@@ -55,7 +57,9 @@ export async function POST(req: NextRequest) {
             '',
             `Dirección: ${address || 'No indicada'}`,
             `CUPS: ${cups || 'No indicado'}`,
-            `Región: ${region || 'No indicada'}`
+            `Región: ${region || 'No indicada'}`,
+            '',
+            `Modalidad: ${contactMode === 'callback' ? 'Contacto del equipo' : 'Contratación directa'}`
         ].join('\n');
 
         const html = `
@@ -71,7 +75,8 @@ export async function POST(req: NextRequest) {
             <p><strong>Dirección:</strong> ${address || 'No indicada'}</p>
             <p><strong>CUPS:</strong> ${cups || 'No indicado'}</p>
             <p><strong>Región:</strong> ${region || 'No indicada'}</p>
-            <p style="margin-top:16px;">El cliente ya ha enviado los datos para gestionar la contratación.</p>
+            <p style="margin-top:16px;">Modalidad: <strong>${contactMode === 'callback' ? 'Contacto del equipo' : 'Contratación directa'}</strong></p>
+            <p style="margin-top:8px;">El cliente ha enviado los datos para gestionar la contratación.</p>
         `;
 
         const attachments: any[] = [];
@@ -80,6 +85,13 @@ export async function POST(req: NextRequest) {
                 filename: invoiceFile.fileName || 'factura.pdf',
                 content: Buffer.from(invoiceFile.base64, 'base64'),
                 contentType: invoiceFile.mimeType || 'application/pdf'
+            });
+        }
+        if (identityFile?.base64) {
+            attachments.push({
+                filename: identityFile.fileName || 'documento_identidad.pdf',
+                content: Buffer.from(identityFile.base64, 'base64'),
+                contentType: identityFile.mimeType || 'application/pdf'
             });
         }
 

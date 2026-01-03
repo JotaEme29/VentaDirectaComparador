@@ -1,8 +1,7 @@
 import React from 'react';
 import { ResultadoTarifa, FormData } from '../../core/tipos';
-import { Zap, TrendingDown, Star, Mail } from 'lucide-react';
+import { Zap, TrendingDown, Star, Mail, PhoneCall } from 'lucide-react';
 import { Badge, Button, Card } from '../ui';
-import { PdfExportButton } from '../shared/PdfExportButton';
 
 interface ResultCardProps {
     result: ResultadoTarifa;
@@ -10,7 +9,7 @@ interface ResultCardProps {
     isBest?: boolean;
     isSelected?: boolean;
     onSelect?: () => void;
-    onRequestLead?: (res: ResultadoTarifa) => void;
+    onRequestLead?: (res: ResultadoTarifa, mode?: 'direct' | 'callback') => void;
 }
 
 const getSupplierLogo = (supplier: string) => {
@@ -101,30 +100,24 @@ export const ResultCard = ({ result, formData, isBest, isSelected, onSelect, onR
 
             {/* CTA */}
             <div className="p-4 bg-slate-50 border-t border-slate-100 relative z-10">
-                <div className="grid grid-cols-[1fr,140px] gap-2 items-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 items-center">
                     <Button
                         fullWidth
                         className="h-11 rounded-xl group flex items-center justify-center gap-2 transition-all shadow-sm bg-blue-600 text-white hover:bg-blue-700 text-[11px] whitespace-nowrap"
-                        onClick={(e) => { e.stopPropagation(); onRequestLead?.(result); }}
+                        onClick={(e) => { e.stopPropagation(); onRequestLead?.(result, 'direct'); }}
                     >
                         <Mail size={16} />
-                        <span className="uppercase tracking-widest font-black">Contratar email</span>
+                        <span className="uppercase tracking-widest font-black">Contratación directa</span>
                     </Button>
-                    <div onClick={(e) => e.stopPropagation()} className="flex">
-                        <PdfExportButton
-                            result={result}
-                            form={formData}
-                            filename={`Soluciones_Vivivan_${formData.clientName || 'Propuesta'}.pdf`}
-                            variant="outline"
-                            className="h-11 w-full text-[11px] font-black uppercase tracking-widest flex items-center justify-center gap-2 whitespace-nowrap bg-white border border-blue-200 hover:border-blue-300 hover:bg-blue-50"
-                            ariaLabel="Descargar PDF"
-                            iconOnly={false}
-                            iconClassName="text-blue-600"
-                            iconColor="#2563eb"
-                        >
-                            Descargar PDF
-                        </PdfExportButton>
-                    </div>
+                    <Button
+                        fullWidth
+                        variant="outline"
+                        className="h-11 rounded-xl flex items-center justify-center gap-2 text-[11px] font-black uppercase tracking-widest border-slate-200 hover:border-blue-300 hover:text-blue-700"
+                        onClick={(e) => { e.stopPropagation(); onRequestLead?.(result, 'callback'); }}
+                    >
+                        <PhoneCall size={16} />
+        <span className="uppercase tracking-widest font-black">Que me contacten</span>
+                    </Button>
                 </div>
             </div>
         </Card>

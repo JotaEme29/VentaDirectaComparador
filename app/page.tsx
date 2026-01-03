@@ -1,12 +1,11 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Sparkles, ArrowRight, ShieldCheck, Zap, HandCoins, Laptop, Users, Building2, ChevronRight, Mail, Search, MousePointer2, CheckCircle2 } from 'lucide-react';
+import { Sparkles, ArrowRight, ShieldCheck, Zap, HandCoins, Laptop, Users, Building2, ChevronRight, Mail, Search, MousePointer2, CheckCircle2, Phone, Upload } from 'lucide-react';
 import { FormData, ResultadoTarifa } from '../core/tipos';
 import { ComparisonForm } from '../components/shared/ComparisonForm';
 import { ResultCard } from '../components/client/ResultCard';
 import { Button, Badge, Card } from '../components/ui';
-import { PdfExportButton } from '../components/shared/PdfExportButton';
 
 const initialForm: FormData = {
     energyType: 'electricidad',
@@ -51,8 +50,11 @@ export default function ClientPage() {
     const [formDataForPdf, setFormDataForPdf] = useState<FormData>(initialForm);
     const [selectedResultIndex, setSelectedResultIndex] = useState(0);
     const [leadModalOpen, setLeadModalOpen] = useState(false);
+    const [leadMode, setLeadMode] = useState<'direct' | 'callback'>('direct');
     const [leadEmail, setLeadEmail] = useState('');
     const [leadPhone, setLeadPhone] = useState('');
+    const [leadInvoiceFile, setLeadInvoiceFile] = useState<{ fileName: string; mimeType: string; base64: string } | null>(null);
+    const [leadIdFile, setLeadIdFile] = useState<{ fileName: string; mimeType: string; base64: string } | null>(null);
     const [leadSending, setLeadSending] = useState(false);
     const [leadError, setLeadError] = useState('');
     const [leadSuccess, setLeadSuccess] = useState(false);
@@ -103,12 +105,15 @@ export default function ClientPage() {
         }
     };
 
-    const handleLeadRequest = (res: ResultadoTarifa) => {
+    const handleLeadRequest = (res: ResultadoTarifa, mode: 'direct' | 'callback' = 'direct') => {
         const idx = resultados?.findIndex(r => r === res) ?? 0;
         setSelectedResultIndex(idx >= 0 ? idx : 0);
         setLeadModalOpen(true);
+        setLeadMode(mode);
         setLeadSuccess(false);
         setLeadError('');
+        setLeadInvoiceFile(null);
+        setLeadIdFile(null);
     };
 
     useEffect(() => {
@@ -118,15 +123,28 @@ export default function ClientPage() {
         }
     }, [leadSuccess]);
 
+    const readFileAsBase64 = (file: File) => new Promise<{ fileName: string; mimeType: string; base64: string }>((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+            const result = reader.result as string;
+            const base64 = result.split(',')[1] || '';
+            resolve({ fileName: file.name, mimeType: file.type || 'application/octet-stream', base64 });
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
+
     const submitLead = async () => {
         if (!resultados) return;
         const oferta = resultados[selectedResultIndex];
         setLeadSending(true);
         setLeadError('');
         try {
+            const invoiceAttachment = leadInvoiceFile || formDataForPdf.invoiceFile || null;
             const payload = {
                 email: leadEmail,
                 phone: leadPhone,
+                contactMode: leadMode,
                 supplier: oferta.supplier,
                 productName: oferta.productName,
                 tariffType: oferta.tariffType,
@@ -136,7 +154,8 @@ export default function ClientPage() {
                 cups: formDataForPdf.cups,
                 region: formDataForPdf.region,
                 energyType: formDataForPdf.energyType,
-                invoiceFile: formDataForPdf.invoiceFile
+                invoiceFile: invoiceAttachment,
+                identityFile: leadIdFile
             };
             const resp = await fetch('/api/leads', {
                 method: 'POST',
@@ -268,12 +287,6 @@ export default function ClientPage() {
                                     </button>
                                     <div className="flex items-center gap-6 flex-wrap">
                                         <h2 className="text-5xl font-black tracking-tighter leading-none text-slate-900">Tu Plan de <span className="text-blue-600">Ahorro</span></h2>
-                                        <PdfExportButton
-                                            result={resultados[selectedResultIndex] || resultados[0]}
-                                            form={formDataForPdf}
-                                            filename={`Soluciones_Vivivan_${formDataForPdf.clientName || 'Propuesta'}.pdf`}
-                                            variant="outline"
-                                        />
                                     </div>
                                 </div>
                         <div className="bg-gradient-to-r from-blue-600 to-indigo-500 px-12 py-8 rounded-3xl flex items-start gap-6 shadow-2xl shadow-blue-600/25 text-white min-w-[320px] md:max-w-[520px] w-full ring-4 ring-blue-500/10">
@@ -312,7 +325,7 @@ export default function ClientPage() {
 
                         {leadModalOpen && resultados && (
                             <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-                                <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 space-y-5">
+                                <div className="bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 space-y-5">
                                     <div className="flex items-start gap-4">
                                         <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 overflow-hidden">
                                             {selectedResult && getSupplierLogo(selectedResult.supplier) ? (
@@ -322,11 +335,28 @@ export default function ClientPage() {
                                             )}
                                         </div>
                                         <div className="flex-1">
-                                            <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-1">Contratación por email</p>
+                                            <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-1">Tramitación de la oferta</p>
                                             <h3 className="text-xl font-black text-slate-900 leading-tight">{selectedResult?.supplier} · {selectedResult?.productName}</h3>
                                             <p className="text-sm text-slate-500">Ahorro estimado: {selectedResult?.annualSavings ? selectedResult.annualSavings.toFixed(0) : '0'}€ / año.</p>
                                         </div>
                                         <Button variant="ghost" size="sm" onClick={() => setLeadModalOpen(false)}>Cerrar</Button>
+                                    </div>
+
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                        <Button
+                                            variant={leadMode === 'direct' ? 'primary' : 'outline'}
+                                            className="h-11 uppercase tracking-widest font-black text-[11px]"
+                                            onClick={() => setLeadMode('direct')}
+                                        >
+                                            Contratación directa
+                                        </Button>
+                                        <Button
+                                            variant={leadMode === 'callback' ? 'primary' : 'outline'}
+                                            className="h-11 uppercase tracking-widest font-black text-[11px]"
+                                            onClick={() => setLeadMode('callback')}
+                                        >
+                                            Que me contacten
+                                        </Button>
                                     </div>
 
                                     <div className="space-y-3">
@@ -352,6 +382,43 @@ export default function ClientPage() {
                                         </div>
                                     </div>
 
+                                    {leadMode === 'direct' && (
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                            <label className="flex flex-col gap-1 p-3 border border-dashed border-blue-200 rounded-2xl cursor-pointer hover:border-blue-400 transition">
+                                                <span className="text-[11px] font-black uppercase tracking-widest text-slate-600 flex items-center gap-2">
+                                                    <Upload size={14} /> Factura (PDF/imagen)
+                                                </span>
+                                                <span className="text-xs text-slate-500">Adjunta para tramitar de inmediato.</span>
+                                                <input
+                                                    type="file"
+                                                    accept=".pdf,image/*"
+                                                    className="hidden"
+                                                    onChange={async (e) => {
+                                                        const file = e.target.files?.[0];
+                                                        if (file) setLeadInvoiceFile(await readFileAsBase64(file));
+                                                    }}
+                                                />
+                                                {leadInvoiceFile && <span className="text-[11px] text-blue-700 font-semibold truncate">{leadInvoiceFile.fileName}</span>}
+                                            </label>
+                                            <label className="flex flex-col gap-1 p-3 border border-dashed border-blue-200 rounded-2xl cursor-pointer hover:border-blue-400 transition">
+                                                <span className="text-[11px] font-black uppercase tracking-widest text-slate-600 flex items-center gap-2">
+                                                    <Upload size={14} /> Documento de identidad
+                                                </span>
+                                                <span className="text-xs text-slate-500">DNI/NIE o CIF para completar el alta.</span>
+                                                <input
+                                                    type="file"
+                                                    accept=".pdf,image/*"
+                                                    className="hidden"
+                                                    onChange={async (e) => {
+                                                        const file = e.target.files?.[0];
+                                                        if (file) setLeadIdFile(await readFileAsBase64(file));
+                                                    }}
+                                                />
+                                                {leadIdFile && <span className="text-[11px] text-blue-700 font-semibold truncate">{leadIdFile.fileName}</span>}
+                                            </label>
+                                        </div>
+                                    )}
+
                                     {leadError && (
                                         <div className="text-sm text-red-600 font-bold bg-red-50 border border-red-100 rounded-xl px-4 py-2">{leadError}</div>
                                     )}
@@ -363,12 +430,14 @@ export default function ClientPage() {
                                             onClick={submitLead}
                                             disabled={leadSending || !leadEmail || !leadPhone}
                                         >
-                                            {leadSending ? 'Enviando...' : 'Enviar por correo'}
+                                            {leadSending ? 'Enviando...' : leadMode === 'direct' ? 'Enviar documentación' : 'Solicitar contacto'}
                                         </Button>
                                     </div>
 
                                     <p className="text-[11px] text-slate-400 leading-relaxed">
-                                        Procesamos tu solicitud por email y te contactamos para cerrar la contratación de esta oferta seleccionada.
+                                        {leadMode === 'direct'
+                                            ? 'Nuestro equipo tramita el alta con la documentación adjunta y te confirma por correo o teléfono.'
+                                            : 'Te contactaremos para recoger los datos y gestionar la contratación de esta oferta.'}
                                     </p>
                                 </div>
                             </div>
