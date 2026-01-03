@@ -175,7 +175,7 @@ export const ComparisonForm = ({ initialData, onSubmit, loading }: ComparisonFor
                             </div>
                             <div className="space-y-0.5">
                                 <p className="text-sm font-black text-slate-900">Lectura automática de factura</p>
-                                <p className="text-xs text-slate-600">Sube PDF o foto y rellenamos los datos por ti (sin robots invasivos).</p>
+                                <p className="text-xs text-slate-600">Sube PDF o foto y rellenamos los datos por ti (sin complicaciones).</p>
                                 {iaStatus && <span className="text-[10px] font-bold text-blue-700 bg-blue-50 border border-blue-100 rounded-full px-2.5 py-1 shadow-sm inline-block">{iaStatus}</span>}
                             </div>
                         </div>
@@ -190,7 +190,7 @@ export const ComparisonForm = ({ initialData, onSubmit, loading }: ComparisonFor
                                 />
                             </label>
                             <Button type="button" variant="outline" disabled={iaLoading} onClick={triggerExtraction} className="text-sm">
-                                {iaLoading ? 'Leyendo...' : 'Rellenar desde factura'}
+                                {iaLoading ? 'Cargando...' : 'Autocompletar'}
                             </Button>
                         </div>
                     </div>

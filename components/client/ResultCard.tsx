@@ -103,20 +103,20 @@ export const ResultCard = ({ result, formData, isBest, isSelected, onSelect, onR
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 items-center">
                     <Button
                         fullWidth
-                        className="h-11 rounded-xl group flex items-center justify-center gap-2 transition-all shadow-sm bg-blue-600 text-white hover:bg-blue-700 text-[11px] whitespace-nowrap"
+                        className="h-11 rounded-xl group flex items-center justify-center gap-2 transition-all shadow-md bg-blue-600 text-white hover:bg-blue-700 text-[12px] font-bold tracking-wide whitespace-nowrap"
                         onClick={(e) => { e.stopPropagation(); onRequestLead?.(result, 'direct'); }}
                     >
                         <Mail size={16} />
-                        <span className="uppercase tracking-widest font-black">Contratación directa</span>
+                        <span className="uppercase">Contratación directa</span>
                     </Button>
                     <Button
                         fullWidth
                         variant="outline"
-                        className="h-11 rounded-xl flex items-center justify-center gap-2 text-[11px] font-black uppercase tracking-widest border-slate-200 hover:border-blue-300 hover:text-blue-700"
+                        className="h-11 rounded-xl flex items-center justify-center gap-2 text-[12px] font-bold uppercase tracking-wide border-slate-200 shadow-sm hover:border-blue-300 hover:text-blue-700"
                         onClick={(e) => { e.stopPropagation(); onRequestLead?.(result, 'callback'); }}
                     >
                         <PhoneCall size={16} />
-        <span className="uppercase tracking-widest font-black">Que me contacten</span>
+                        <span className="uppercase">Que me contacten</span>
                     </Button>
                 </div>
             </div>

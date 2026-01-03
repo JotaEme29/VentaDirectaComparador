@@ -342,22 +342,22 @@ export default function ClientPage() {
                                         <Button variant="ghost" size="sm" onClick={() => setLeadModalOpen(false)}>Cerrar</Button>
                                     </div>
 
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                        <Button
-                                            variant={leadMode === 'direct' ? 'primary' : 'outline'}
-                                            className="h-11 uppercase tracking-widest font-black text-[11px]"
-                                            onClick={() => setLeadMode('direct')}
-                                        >
-                                            Contratación directa
-                                        </Button>
-                                        <Button
-                                            variant={leadMode === 'callback' ? 'primary' : 'outline'}
-                                            className="h-11 uppercase tracking-widest font-black text-[11px]"
-                                            onClick={() => setLeadMode('callback')}
-                                        >
-                                            Que me contacten
-                                        </Button>
-                                    </div>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                            <Button
+                                                variant={leadMode === 'direct' ? 'primary' : 'outline'}
+                                                className="h-11 uppercase tracking-wide font-black text-[12px]"
+                                                onClick={() => setLeadMode('direct')}
+                                            >
+                                                Contratación directa
+                                            </Button>
+                                            <Button
+                                                variant={leadMode === 'callback' ? 'primary' : 'outline'}
+                                                className="h-11 uppercase tracking-wide font-black text-[12px]"
+                                                onClick={() => setLeadMode('callback')}
+                                            >
+                                                Que me contacten
+                                            </Button>
+                                        </div>
 
                                     <div className="space-y-3">
                                         <div className="space-y-1">
