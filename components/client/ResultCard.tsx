@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+
 import { ResultadoTarifa, FormData } from '../../core/tipos';
 import { Zap, TrendingDown, Star, Mail, PhoneCall } from 'lucide-react';
 import { Badge, Button, Card } from '../ui';

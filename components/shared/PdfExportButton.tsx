@@ -1,5 +1,7 @@
-// components/shared/PdfExportButton.tsx
+'use client';
+
 import React, { useMemo, useState } from 'react';
+
 import { FileDown, Loader2 } from 'lucide-react';
 import { Button } from '../ui';
 import { PdfTemplate } from './PdfTemplate';
